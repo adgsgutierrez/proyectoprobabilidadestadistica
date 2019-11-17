@@ -13,9 +13,6 @@ Aric Gutierrez  506162030
 
 En esta sección encontrarás todos los conceptos necesarios para iniciar a trabajar con herramientas enfocadas al desarrollo de la probabilidad y la estadística.
 
-```{r}
-plot(cars)
-```
 ###Paquete prob
 
 Para instalar use la instrucción install.packages("prob") y para cargar la libreria library(prob). Esta librería, sirve para trabajar los siguientes apartados.
