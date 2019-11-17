@@ -1753,129 +1753,69 @@ summary {
 <h3>Participantes</h3>
 <p>Enrique Suarez 506161049</p>
 <p>Aric Gutierrez 506162030</p>
-</div>
-<div id="conceptos-básicos" class="section level3">
-<h3>Conceptos Básicos</h3>
 <p>En esta sección encontrarás todos los conceptos necesarios para iniciar a trabajar con herramientas enfocadas al desarrollo de la probabilidad y la estadística.</p>
-<p>###Paquete prob</p>
+</div>
+<div id="recursos-necesarios" class="section level2">
+<h2>Recursos Necesarios</h2>
+<div id="paquete-prob" class="section level3">
+<h3>Paquete prob</h3>
 <p>Para instalar use la instrucción install.packages(“prob”) y para cargar la libreria library(prob). Esta librería, sirve para trabajar los siguientes apartados.</p>
-<p>###UNIÓN</p>
+</div>
+</div>
+<div id="conceptos-básicos" class="section level2">
+<h2>Conceptos Básicos</h2>
+<div id="unión" class="section level3">
+<h3>Unión</h3>
 <p>Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.</p>
 <p>Con el método union(A,B), realizaremos la unión de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico. Por medio de la función subset(x,…), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuYGBgIn0= -->
-<pre class="r"><code>library(prob)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiBjb21iaW5hdFxuXG5BdHRhY2hpbmcgcGFja2FnZTog4oCYY29tYmluYXTigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g4oCYcGFja2FnZTp1dGlsc+KAmTpcblxuICAgIGNvbWJuXG5cbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogZkFzaWFuT3B0aW9uc1xuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiB0aW1lRGF0ZVxuTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiB0aW1lU2VyaWVzXG5Mb2FkaW5nIHJlcXVpcmVkIHBhY2thZ2U6IGZCYXNpY3NcbkxvYWRpbmcgcmVxdWlyZWQgcGFja2FnZTogZk9wdGlvbnNcblxuQXR0YWNoaW5nIHBhY2thZ2U6IOKAmHByb2LigJlcblxuVGhlIGZvbGxvd2luZyBvYmplY3RzIGFyZSBtYXNrZWQgZnJvbSDigJhwYWNrYWdlOmJhc2XigJk6XG5cbiAgICBpbnRlcnNlY3QsIHNldGRpZmYsIHVuaW9uXG4ifQ== -->
-<pre><code>Loading required package: combinat
-
-Attaching package: ‘combinat’
-
-The following object is masked from ‘package:utils’:
-
-    combn
-
-Loading required package: fAsianOptions
-Loading required package: timeDate
-Loading required package: timeSeries
-Loading required package: fBasics
-Loading required package: fOptions
-
-Attaching package: ‘prob’
-
-The following objects are masked from ‘package:base’:
-
-    intersect, setdiff, union</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcbmBgYCJ9 -->
-<pre class="r"><code>S &lt;- cards()
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcblxuXG5cbkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gXCJBXCIgKSAjI1NvbG8gbG9zIHF1ZSBzb24gYXNlc1xuQlxuXG5cbnVuaW9uKEEsQilcbmBgYCJ9 -->
+<pre class="r"><code>library(prob)
+S &lt;- cards()
 A &lt;- subset(S, suit == &quot;Heart&quot;)##Evento de solo corazones
-A </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MTN9LCJyZGYiOiJVa1JZTXdwWUNnQUFBQU1BQXdZQUFBTUZBQUFBQUFWVlZFWXRPQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBSUFBQU1OQUFBQURRQUFBQUVBQUFBQ0FBQUFBd0FBQUFRQUFBQUZBQUFBQmdBQUFBY0FBQUFJQUFBQUNRQUFBQW9BQUFBTEFBQUFEQUFBQUEwQUFBUUNBQUFBQVFBRUFBa0FBQUFHYkdWMlpXeHpBQUFBRUFBQUFBMEFCQUFKQUFBQUFUSUFCQUFKQUFBQUFUTUFCQUFKQUFBQUFUUUFCQUFKQUFBQUFUVUFCQUFKQUFBQUFUWUFCQUFKQUFBQUFUY0FCQUFKQUFBQUFUZ0FCQUFKQUFBQUFUa0FCQUFKQUFBQUFqRXdBQVFBQ1FBQUFBRktBQVFBQ1FBQUFBRlJBQVFBQ1FBQUFBRkxBQVFBQ1FBQUFBRkJBQUFFQWdBQUFBRUFCQUFKQUFBQUJXTnNZWE56QUFBQUVBQUFBQUVBQkFBSkFBQUFCbVpoWTNSdmNnQUFBUDRBQUFNTkFBQUFEUUFBQUFNQUFBQURBQUFBQXdBQUFBTUFBQUFEQUFBQUF3QUFBQU1BQUFBREFBQUFBd0FBQUFNQUFBQURBQUFBQXdBQUFBTUFBQVFDQUFBQy93QUFBQkFBQUFBRUFBUUFDUUFBQUFSRGJIVmlBQVFBQ1FBQUFBZEVhV0Z0YjI1a0FBUUFDUUFBQUFWSVpXRnlkQUFFQUFrQUFBQUZVM0JoWkdVQUFBUUNBQUFEL3dBQUFCQUFBQUFCQUFRQUNRQUFBQVptWVdOMGIzSUFBQUQrQUFBRUFnQUFBQUVBQkFBSkFBQUFCVzVoYldWekFBQUFFQUFBQUFJQUJBQUpBQUFBQkhKaGJtc0FCQUFKQUFBQUJITjFhWFFBQUFRQ0FBQUFBUUFFQUFrQUFBQUpjbTkzTG01aGJXVnpBQUFBRFFBQUFBMEFBQUFiQUFBQUhBQUFBQjBBQUFBZUFBQUFId0FBQUNBQUFBQWhBQUFBSWdBQUFDTUFBQUFrQUFBQUpRQUFBQ1lBQUFBbkFBQUVBZ0FBQS84QUFBQVFBQUFBQVFBRUFBa0FBQUFLWkdGMFlTNW1jbUZ0WlFBQUFQNEFBQVFDQUFBQUFRQUVBQWtBQUFBSGIzQjBhVzl1Y3dBQUFoTUFBQUFGQUFBQUVBQUFBQUVBQkFBSkFBQUFBWElBQUFBUUFBQUFBUUFFQUFrQUFBQVBkVzV1WVcxbFpDMWphSFZ1YXkweEFBQUFDZ0FBQUFFQUFBQUJBQUFBRFFBQUFBRUFBQUFOQUFBQURRQUFBQUVBQUFBQ0FBQUVBZ0FBQlA4QUFBQVFBQUFBQlFBRUFBa0FBQUFHWlc1bmFXNWxBQVFBQ1FBQUFBVnNZV0psYkFBRUFBa0FBQUFPY205M2JtRnRaWE11Y0hKcGJuUUFCQUFKQUFBQUNuSnZkM011ZEc5MFlXd0FCQUFKQUFBQUNtTnZiSE11ZEc5MFlXd0FBQUQrQUFBQS9nPT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"2","2":"Heart","_rn_":"27"},{"1":"3","2":"Heart","_rn_":"28"},{"1":"4","2":"Heart","_rn_":"29"},{"1":"5","2":"Heart","_rn_":"30"},{"1":"6","2":"Heart","_rn_":"31"},{"1":"7","2":"Heart","_rn_":"32"},{"1":"8","2":"Heart","_rn_":"33"},{"1":"9","2":"Heart","_rn_":"34"},{"1":"10","2":"Heart","_rn_":"35"},{"1":"J","2":"Heart","_rn_":"36"},{"1":"Q","2":"Heart","_rn_":"37"},{"1":"K","2":"Heart","_rn_":"38"},{"1":"A","2":"Heart","_rn_":"39"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[13]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5cblxuQiA8LSBzdWJzZXQoUywgcmFuayA9PSBcIkFcIiApICMjU29sbyBsb3MgcXVlIHNvbiBhc2VzXG5CXG5gYGAifQ== -->
-<pre class="r"><code>
+A 
+
 
 
 B &lt;- subset(S, rank == &quot;A&quot; ) ##Solo los que son ases
-B</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6NH0sInJkZiI6IlVrUllNd3BZQ2dBQUFBTUFBd1lBQUFNRkFBQUFBQVZWVkVZdE9BQUFCQUlBQUFBQkFBUUFDUUFBQUFGNEFBQURFd0FBQUFJQUFBTU5BQUFBQkFBQUFBMEFBQUFOQUFBQURRQUFBQTBBQUFRQ0FBQUFBUUFFQUFrQUFBQUdiR1YyWld4ekFBQUFFQUFBQUEwQUJBQUpBQUFBQVRJQUJBQUpBQUFBQVRNQUJBQUpBQUFBQVRRQUJBQUpBQUFBQVRVQUJBQUpBQUFBQVRZQUJBQUpBQUFBQVRjQUJBQUpBQUFBQVRnQUJBQUpBQUFBQVRrQUJBQUpBQUFBQWpFd0FBUUFDUUFBQUFGS0FBUUFDUUFBQUFGUkFBUUFDUUFBQUFGTEFBUUFDUUFBQUFGQkFBQUVBZ0FBQUFFQUJBQUpBQUFBQldOc1lYTnpBQUFBRUFBQUFBRUFCQUFKQUFBQUJtWmhZM1J2Y2dBQUFQNEFBQU1OQUFBQUJBQUFBQUVBQUFBQ0FBQUFBd0FBQUFRQUFBUUNBQUFDL3dBQUFCQUFBQUFFQUFRQUNRQUFBQVJEYkhWaUFBUUFDUUFBQUFkRWFXRnRiMjVrQUFRQUNRQUFBQVZJWldGeWRBQUVBQWtBQUFBRlUzQmhaR1VBQUFRQ0FBQUQvd0FBQUJBQUFBQUJBQVFBQ1FBQUFBWm1ZV04wYjNJQUFBRCtBQUFFQWdBQUFBRUFCQUFKQUFBQUJXNWhiV1Z6QUFBQUVBQUFBQUlBQkFBSkFBQUFCSEpoYm1zQUJBQUpBQUFBQkhOMWFYUUFBQVFDQUFBQUFRQUVBQWtBQUFBSmNtOTNMbTVoYldWekFBQUFEUUFBQUFRQUFBQU5BQUFBR2dBQUFDY0FBQUEwQUFBRUFnQUFBLzhBQUFBUUFBQUFBUUFFQUFrQUFBQUtaR0YwWVM1bWNtRnRaUUFBQVA0QUFBUUNBQUFBQVFBRUFBa0FBQUFIYjNCMGFXOXVjd0FBQWhNQUFBQUZBQUFBRUFBQUFBRUFCQUFKQUFBQUFYSUFBQUFRQUFBQUFRQUVBQWtBQUFBUGRXNXVZVzFsWkMxamFIVnVheTB4QUFBQUNnQUFBQUVBQUFBQkFBQUFEUUFBQUFFQUFBQUVBQUFBRFFBQUFBRUFBQUFDQUFBRUFnQUFCUDhBQUFBUUFBQUFCUUFFQUFrQUFBQUdaVzVuYVc1bEFBUUFDUUFBQUFWc1lXSmxiQUFFQUFrQUFBQU9jbTkzYm1GdFpYTXVjSEpwYm5RQUJBQUpBQUFBQ25KdmQzTXVkRzkwWVd3QUJBQUpBQUFBQ21OdmJITXVkRzkwWVd3QUFBRCtBQUFBL2c9PSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"A","2":"Club","_rn_":"13"},{"1":"A","2":"Diamond","_rn_":"26"},{"1":"A","2":"Heart","_rn_":"39"},{"1":"A","2":"Spade","_rn_":"52"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5cbnVuaW9uKEEsQilcbmBgYCJ9 -->
-<pre class="r"><code>
+B
+
 
 union(A,B)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MTZ9LCJyZGYiOiJVa1JZTXdwWUNnQUFBQU1BQXdZQUFBTUZBQUFBQUFWVlZFWXRPQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBSUFBQU1OQUFBQUVBQUFBQTBBQUFBTkFBQUFBUUFBQUFJQUFBQURBQUFBQkFBQUFBVUFBQUFHQUFBQUJ3QUFBQWdBQUFBSkFBQUFDZ0FBQUFzQUFBQU1BQUFBRFFBQUFBMEFBQVFDQUFBQUFRQUVBQWtBQUFBR2JHVjJaV3h6QUFBQUVBQUFBQTBBQkFBSkFBQUFBVElBQkFBSkFBQUFBVE1BQkFBSkFBQUFBVFFBQkFBSkFBQUFBVFVBQkFBSkFBQUFBVFlBQkFBSkFBQUFBVGNBQkFBSkFBQUFBVGdBQkFBSkFBQUFBVGtBQkFBSkFBQUFBakV3QUFRQUNRQUFBQUZLQUFRQUNRQUFBQUZSQUFRQUNRQUFBQUZMQUFRQUNRQUFBQUZCQUFBRUFnQUFBQUVBQkFBSkFBQUFCV05zWVhOekFBQUFFQUFBQUFFQUJBQUpBQUFBQm1aaFkzUnZjZ0FBQVA0QUFBTU5BQUFBRUFBQUFBRUFBQUFDQUFBQUF3QUFBQU1BQUFBREFBQUFBd0FBQUFNQUFBQURBQUFBQXdBQUFBTUFBQUFEQUFBQUF3QUFBQU1BQUFBREFBQUFBd0FBQUFRQUFBUUNBQUFDL3dBQUFCQUFBQUFFQUFRQUNRQUFBQVJEYkhWaUFBUUFDUUFBQUFkRWFXRnRiMjVrQUFRQUNRQUFBQVZJWldGeWRBQUVBQWtBQUFBRlUzQmhaR1VBQUFRQ0FBQUQvd0FBQUJBQUFBQUJBQVFBQ1FBQUFBWm1ZV04wYjNJQUFBRCtBQUFFQWdBQUFBRUFCQUFKQUFBQUJXNWhiV1Z6QUFBQUVBQUFBQUlBQkFBSkFBQUFCSEpoYm1zQUJBQUpBQUFBQkhOMWFYUUFBQVFDQUFBQUFRQUVBQWtBQUFBSmNtOTNMbTVoYldWekFBQUFFQUFBQUJBQUJBQUpBQUFBQWpFekFBUUFDUUFBQUFJeU5nQUVBQWtBQUFBQ01qY0FCQUFKQUFBQUFqSTRBQVFBQ1FBQUFBSXlPUUFFQUFrQUFBQUNNekFBQkFBSkFBQUFBak14QUFRQUNRQUFBQUl6TWdBRUFBa0FBQUFDTXpNQUJBQUpBQUFBQWpNMEFBUUFDUUFBQUFJek5RQUVBQWtBQUFBQ016WUFCQUFKQUFBQUFqTTNBQVFBQ1FBQUFBSXpPQUFFQUFrQUFBQUNNemtBQkFBSkFBQUFBalV5QUFBRUFnQUFBLzhBQUFBUUFBQUFBUUFFQUFrQUFBQUtaR0YwWVM1bWNtRnRaUUFBQVA0QUFBUUNBQUFBQVFBRUFBa0FBQUFIYjNCMGFXOXVjd0FBQWhNQUFBQUZBQUFBRUFBQUFBRUFCQUFKQUFBQUFYSUFBQUFRQUFBQUFRQUVBQWtBQUFBUGRXNXVZVzFsWkMxamFIVnVheTB4QUFBQUNnQUFBQUVBQUFBQkFBQUFEUUFBQUFFQUFBQVFBQUFBRFFBQUFBRUFBQUFDQUFBRUFnQUFCUDhBQUFBUUFBQUFCUUFFQUFrQUFBQUdaVzVuYVc1bEFBUUFDUUFBQUFWc1lXSmxiQUFFQUFrQUFBQU9jbTkzYm1GdFpYTXVjSEpwYm5RQUJBQUpBQUFBQ25KdmQzTXVkRzkwWVd3QUJBQUpBQUFBQ21OdmJITXVkRzkwWVd3QUFBRCtBQUFBL2c9PSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"A","2":"Club","_rn_":"13"},{"1":"A","2":"Diamond","_rn_":"26"},{"1":"2","2":"Heart","_rn_":"27"},{"1":"3","2":"Heart","_rn_":"28"},{"1":"4","2":"Heart","_rn_":"29"},{"1":"5","2":"Heart","_rn_":"30"},{"1":"6","2":"Heart","_rn_":"31"},{"1":"7","2":"Heart","_rn_":"32"},{"1":"8","2":"Heart","_rn_":"33"},{"1":"9","2":"Heart","_rn_":"34"},{"1":"10","2":"Heart","_rn_":"35"},{"1":"J","2":"Heart","_rn_":"36"},{"1":"Q","2":"Heart","_rn_":"37"},{"1":"K","2":"Heart","_rn_":"38"},{"1":"A","2":"Heart","_rn_":"39"},{"1":"A","2":"Spade","_rn_":"52"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[16]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>###INTERSECCIÓN</p>
+</div>
+<div id="intersección" class="section level3">
+<h3>Intersección</h3>
 <p>Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.</p>
 <p>Con el método intersect(A,B), realizaremos la intersección de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico. Por medio de la función subset(x,…), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcblxuXG5cbkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gXCJBXCIgKSAjI1NvbG8gbG9zIHF1ZSBzb24gYXNlc1xuQlxuXG5cbmludGVyc2VjdChBLEIpXG5gYGAifQ== -->
 <pre class="r"><code>library(prob)
 S &lt;- cards()
 A &lt;- subset(S, suit == &quot;Heart&quot;)##Evento de solo corazones
-A </code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MTN9LCJyZGYiOiJVa1JZTXdwWUNnQUFBQU1BQXdZQUFBTUZBQUFBQUFWVlZFWXRPQUFBQkFJQUFBQUJBQVFBQ1FBQUFBRjRBQUFERXdBQUFBSUFBQU1OQUFBQURRQUFBQUVBQUFBQ0FBQUFBd0FBQUFRQUFBQUZBQUFBQmdBQUFBY0FBQUFJQUFBQUNRQUFBQW9BQUFBTEFBQUFEQUFBQUEwQUFBUUNBQUFBQVFBRUFBa0FBQUFHYkdWMlpXeHpBQUFBRUFBQUFBMEFCQUFKQUFBQUFUSUFCQUFKQUFBQUFUTUFCQUFKQUFBQUFUUUFCQUFKQUFBQUFUVUFCQUFKQUFBQUFUWUFCQUFKQUFBQUFUY0FCQUFKQUFBQUFUZ0FCQUFKQUFBQUFUa0FCQUFKQUFBQUFqRXdBQVFBQ1FBQUFBRktBQVFBQ1FBQUFBRlJBQVFBQ1FBQUFBRkxBQVFBQ1FBQUFBRkJBQUFFQWdBQUFBRUFCQUFKQUFBQUJXTnNZWE56QUFBQUVBQUFBQUVBQkFBSkFBQUFCbVpoWTNSdmNnQUFBUDRBQUFNTkFBQUFEUUFBQUFNQUFBQURBQUFBQXdBQUFBTUFBQUFEQUFBQUF3QUFBQU1BQUFBREFBQUFBd0FBQUFNQUFBQURBQUFBQXdBQUFBTUFBQVFDQUFBQy93QUFBQkFBQUFBRUFBUUFDUUFBQUFSRGJIVmlBQVFBQ1FBQUFBZEVhV0Z0YjI1a0FBUUFDUUFBQUFWSVpXRnlkQUFFQUFrQUFBQUZVM0JoWkdVQUFBUUNBQUFEL3dBQUFCQUFBQUFCQUFRQUNRQUFBQVptWVdOMGIzSUFBQUQrQUFBRUFnQUFBQUVBQkFBSkFBQUFCVzVoYldWekFBQUFFQUFBQUFJQUJBQUpBQUFBQkhKaGJtc0FCQUFKQUFBQUJITjFhWFFBQUFRQ0FBQUFBUUFFQUFrQUFBQUpjbTkzTG01aGJXVnpBQUFBRFFBQUFBMEFBQUFiQUFBQUhBQUFBQjBBQUFBZUFBQUFId0FBQUNBQUFBQWhBQUFBSWdBQUFDTUFBQUFrQUFBQUpRQUFBQ1lBQUFBbkFBQUVBZ0FBQS84QUFBQVFBQUFBQVFBRUFBa0FBQUFLWkdGMFlTNW1jbUZ0WlFBQUFQNEFBQVFDQUFBQUFRQUVBQWtBQUFBSGIzQjBhVzl1Y3dBQUFoTUFBQUFGQUFBQUVBQUFBQUVBQkFBSkFBQUFBWElBQUFBUUFBQUFBUUFFQUFrQUFBQVBkVzV1WVcxbFpDMWphSFZ1YXkweUFBQUFDZ0FBQUFFQUFBQUJBQUFBRFFBQUFBRUFBQUFOQUFBQURRQUFBQUVBQUFBQ0FBQUVBZ0FBQlA4QUFBQVFBQUFBQlFBRUFBa0FBQUFHWlc1bmFXNWxBQVFBQ1FBQUFBVnNZV0psYkFBRUFBa0FBQUFPY205M2JtRnRaWE11Y0hKcGJuUUFCQUFKQUFBQUNuSnZkM011ZEc5MFlXd0FCQUFKQUFBQUNtTnZiSE11ZEc5MFlXd0FBQUQrQUFBQS9nPT0ifQ== -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"2","2":"Heart","_rn_":"27"},{"1":"3","2":"Heart","_rn_":"28"},{"1":"4","2":"Heart","_rn_":"29"},{"1":"5","2":"Heart","_rn_":"30"},{"1":"6","2":"Heart","_rn_":"31"},{"1":"7","2":"Heart","_rn_":"32"},{"1":"8","2":"Heart","_rn_":"33"},{"1":"9","2":"Heart","_rn_":"34"},{"1":"10","2":"Heart","_rn_":"35"},{"1":"J","2":"Heart","_rn_":"36"},{"1":"Q","2":"Heart","_rn_":"37"},{"1":"K","2":"Heart","_rn_":"38"},{"1":"A","2":"Heart","_rn_":"39"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[13]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5cblxuQiA8LSBzdWJzZXQoUywgcmFuayA9PSBcIkFcIiApICMjU29sbyBsb3MgcXVlIHNvbiBhc2VzXG5CXG5gYGAifQ== -->
-<pre class="r"><code>
+A 
+
 
 
 B &lt;- subset(S, rank == &quot;A&quot; ) ##Solo los que son ases
-B</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6NH0sInJkZiI6IlVrUllNd3BZQ2dBQUFBTUFBd1lBQUFNRkFBQUFBQVZWVkVZdE9BQUFCQUlBQUFBQkFBUUFDUUFBQUFGNEFBQURFd0FBQUFJQUFBTU5BQUFBQkFBQUFBMEFBQUFOQUFBQURRQUFBQTBBQUFRQ0FBQUFBUUFFQUFrQUFBQUdiR1YyWld4ekFBQUFFQUFBQUEwQUJBQUpBQUFBQVRJQUJBQUpBQUFBQVRNQUJBQUpBQUFBQVRRQUJBQUpBQUFBQVRVQUJBQUpBQUFBQVRZQUJBQUpBQUFBQVRjQUJBQUpBQUFBQVRnQUJBQUpBQUFBQVRrQUJBQUpBQUFBQWpFd0FBUUFDUUFBQUFGS0FBUUFDUUFBQUFGUkFBUUFDUUFBQUFGTEFBUUFDUUFBQUFGQkFBQUVBZ0FBQUFFQUJBQUpBQUFBQldOc1lYTnpBQUFBRUFBQUFBRUFCQUFKQUFBQUJtWmhZM1J2Y2dBQUFQNEFBQU1OQUFBQUJBQUFBQUVBQUFBQ0FBQUFBd0FBQUFRQUFBUUNBQUFDL3dBQUFCQUFBQUFFQUFRQUNRQUFBQVJEYkhWaUFBUUFDUUFBQUFkRWFXRnRiMjVrQUFRQUNRQUFBQVZJWldGeWRBQUVBQWtBQUFBRlUzQmhaR1VBQUFRQ0FBQUQvd0FBQUJBQUFBQUJBQVFBQ1FBQUFBWm1ZV04wYjNJQUFBRCtBQUFFQWdBQUFBRUFCQUFKQUFBQUJXNWhiV1Z6QUFBQUVBQUFBQUlBQkFBSkFBQUFCSEpoYm1zQUJBQUpBQUFBQkhOMWFYUUFBQVFDQUFBQUFRQUVBQWtBQUFBSmNtOTNMbTVoYldWekFBQUFEUUFBQUFRQUFBQU5BQUFBR2dBQUFDY0FBQUEwQUFBRUFnQUFBLzhBQUFBUUFBQUFBUUFFQUFrQUFBQUtaR0YwWVM1bWNtRnRaUUFBQVA0QUFBUUNBQUFBQVFBRUFBa0FBQUFIYjNCMGFXOXVjd0FBQWhNQUFBQUZBQUFBRUFBQUFBRUFCQUFKQUFBQUFYSUFBQUFRQUFBQUFRQUVBQWtBQUFBUGRXNXVZVzFsWkMxamFIVnVheTB5QUFBQUNnQUFBQUVBQUFBQkFBQUFEUUFBQUFFQUFBQUVBQUFBRFFBQUFBRUFBQUFDQUFBRUFnQUFCUDhBQUFBUUFBQUFCUUFFQUFrQUFBQUdaVzVuYVc1bEFBUUFDUUFBQUFWc1lXSmxiQUFFQUFrQUFBQU9jbTkzYm1GdFpYTXVjSEpwYm5RQUJBQUpBQUFBQ25KdmQzTXVkRzkwWVd3QUJBQUpBQUFBQ21OdmJITXVkRzkwWVd3QUFBRCtBQUFBL2c9PSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"A","2":"Club","_rn_":"13"},{"1":"A","2":"Diamond","_rn_":"26"},{"1":"A","2":"Heart","_rn_":"39"},{"1":"A","2":"Spade","_rn_":"52"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5cbmludGVyc2VjdChBLEIpXG5gYGAifQ== -->
-<pre class="r"><code>
+B
+
 
 intersect(A,B)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MX0sInJkZiI6IlVrUllNd3BZQ2dBQUFBTUFBd1lBQUFNRkFBQUFBQVZWVkVZdE9BQUFCQUlBQUFBQkFBUUFDUUFBQUFGNEFBQURFd0FBQUFJQUFBTU5BQUFBQVFBQUFBMEFBQVFDQUFBQUFRQUVBQWtBQUFBR2JHVjJaV3h6QUFBQUVBQUFBQTBBQkFBSkFBQUFBVElBQkFBSkFBQUFBVE1BQkFBSkFBQUFBVFFBQkFBSkFBQUFBVFVBQkFBSkFBQUFBVFlBQkFBSkFBQUFBVGNBQkFBSkFBQUFBVGdBQkFBSkFBQUFBVGtBQkFBSkFBQUFBakV3QUFRQUNRQUFBQUZLQUFRQUNRQUFBQUZSQUFRQUNRQUFBQUZMQUFRQUNRQUFBQUZCQUFBRUFnQUFBQUVBQkFBSkFBQUFCV05zWVhOekFBQUFFQUFBQUFFQUJBQUpBQUFBQm1aaFkzUnZjZ0FBQVA0QUFBTU5BQUFBQVFBQUFBTUFBQVFDQUFBQy93QUFBQkFBQUFBRUFBUUFDUUFBQUFSRGJIVmlBQVFBQ1FBQUFBZEVhV0Z0YjI1a0FBUUFDUUFBQUFWSVpXRnlkQUFFQUFrQUFBQUZVM0JoWkdVQUFBUUNBQUFEL3dBQUFCQUFBQUFCQUFRQUNRQUFBQVptWVdOMGIzSUFBQUQrQUFBRUFnQUFBQUVBQkFBSkFBQUFCVzVoYldWekFBQUFFQUFBQUFJQUJBQUpBQUFBQkhKaGJtc0FCQUFKQUFBQUJITjFhWFFBQUFRQ0FBQUFBUUFFQUFrQUFBQUpjbTkzTG01aGJXVnpBQUFBRFFBQUFBRUFBQUFuQUFBRUFnQUFBLzhBQUFBUUFBQUFBUUFFQUFrQUFBQUtaR0YwWVM1bWNtRnRaUUFBQVA0QUFBUUNBQUFBQVFBRUFBa0FBQUFIYjNCMGFXOXVjd0FBQWhNQUFBQUZBQUFBRUFBQUFBRUFCQUFKQUFBQUFYSUFBQUFRQUFBQUFRQUVBQWtBQUFBUGRXNXVZVzFsWkMxamFIVnVheTB5QUFBQUNnQUFBQUVBQUFBQkFBQUFEUUFBQUFFQUFBQUJBQUFBRFFBQUFBRUFBQUFDQUFBRUFnQUFCUDhBQUFBUUFBQUFCUUFFQUFrQUFBQUdaVzVuYVc1bEFBUUFDUUFBQUFWc1lXSmxiQUFFQUFrQUFBQU9jbTkzYm1GdFpYTXVjSEpwYm5RQUJBQUpBQUFBQ25KdmQzTXVkRzkwWVd3QUJBQUpBQUFBQ21OdmJITXVkRzkwWVd3QUFBRCtBQUFBL2c9PSJ9 -->
-<div data-pagedtable="false">
-<script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"A","2":"Heart","_rn_":"39"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
-  </script>
-</div>
-<!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>##Probabilidad</p>
-<p>##Espacio muestral discreto Para calcular la probabilidad de un evento en R, es posible usar el paquete prob. Para el ejemplo, se usará un espacio muestral de ejemplo: tosscoin(n) devuelve el espacio muestral de lanzar n monedas repetídamente. Además, calcularemos la probabilidad de obtener una cara de la tirada de las dos monedas. Para esto, usaremos el operador xor, la operación nrow() para obtener la cantidad de filas de cada conjunto.</p>
+</div>
+</div>
+<div id="probabilidad" class="section level2">
+<h2>Probabilidad</h2>
+<div id="espacio-muestral-discreto" class="section level3">
+<h3>Espacio muestral discreto</h3>
+<p>Para calcular la probabilidad de un evento en R, es posible usar el paquete prob. Para el ejemplo, se usará un espacio muestral de ejemplo: tosscoin(n) devuelve el espacio muestral de lanzar n monedas repetídamente. Además, calcularemos la probabilidad de obtener una cara de la tirada de las dos monedas. Para esto, usaremos el operador xor, la operación nrow() para obtener la cantidad de filas de cada conjunto.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUzwtdG9zc2NvaW4oMilcbkE8LXN1YnNldChTLHhvcih0b3NzMT09XCJIXCIsdG9zczI9PVwiSFwiKSlcblBBPC1ucm93KEEpL25yb3coUylcblBBXG5gYGAifQ== -->
@@ -1889,8 +1829,9 @@ PA</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFudWFsIGRlIFByb2JhYmlsw61zdGljbyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMjIFBhcnRpY2lwYW50ZXMKCkVucmlxdWUgU3VhcmV6ICA1MDYxNjEwNDkKCkFyaWMgR3V0aWVycmV6ICA1MDYxNjIwMzAKCiMjIyBDb25jZXB0b3MgQsOhc2ljb3MKCkVuIGVzdGEgc2VjY2nDs24gZW5jb250cmFyw6FzIHRvZG9zIGxvcyBjb25jZXB0b3MgbmVjZXNhcmlvcyBwYXJhIGluaWNpYXIgYSB0cmFiYWphciBjb24gaGVycmFtaWVudGFzIGVuZm9jYWRhcyBhbCBkZXNhcnJvbGxvIGRlIGxhIHByb2JhYmlsaWRhZCB5IGxhIGVzdGFkw61zdGljYS4KCiMjI1BhcXVldGUgcHJvYgoKUGFyYSBpbnN0YWxhciB1c2UgbGEgaW5zdHJ1Y2Npw7NuIGluc3RhbGwucGFja2FnZXMoInByb2IiKSB5IHBhcmEgY2FyZ2FyIGxhIGxpYnJlcmlhIGxpYnJhcnkocHJvYikuIEVzdGEgbGlicmVyw61hLCBzaXJ2ZSBwYXJhIHRyYWJhamFyIGxvcyBzaWd1aWVudGVzIGFwYXJ0YWRvcy4KCiMjI1VOScOTTgoKUGFyYSBlbCBlamVtcGxvLCBzZSB1c2Fyw6EgdW4gZGF0YSBmcmFtZSBkZSBlamVtcGxvIHF1ZSB2aWVuZSBkZW50cm8gZGVsIHBhcXVldGUgcHJvYiBsbGFtYWRvIGNhcmRzLgoKQ29uIGVsIG3DqXRvZG8gdW5pb24oQSxCKSwgcmVhbGl6YXJlbW9zIGxhIHVuacOzbiBkZSBsb3MgZG9zIGNvbmp1bnRvcy4gU2llbmRvIEEsIHkgQiBzdWJjb25qdW50b3MgZGUgdW4gZXNwYWNpbyBwcm9iYWJpbMOtc3RpY28uClBvciBtZWRpbyBkZSBsYSBmdW5jacOzbiBzdWJzZXQoeCwuLi4pLCBvYnRlbmVtb3MgdW4gc3ViY29uanVudG8gZGUgdmFsb3JlcyBkZWwgY29uanVudG8geCwgcXVlIGN1bXBsZSBjb24gY2llcnRhcyBjb25kaWNpb25lcywgZXN0YXMgZGFkYXMgZW4gbG9zIHBhcmFtZXRyb3Mgc2lndWllbnRlcyBhIHguCmBgYHtyfQpsaWJyYXJ5KHByb2IpClMgPC0gY2FyZHMoKQpBIDwtIHN1YnNldChTLCBzdWl0ID09ICJIZWFydCIpIyNFdmVudG8gZGUgc29sbyBjb3Jhem9uZXMKQSAKCgoKQiA8LSBzdWJzZXQoUywgcmFuayA9PSAiQSIgKSAjI1NvbG8gbG9zIHF1ZSBzb24gYXNlcwpCCgoKdW5pb24oQSxCKQpgYGAKCgojIyNJTlRFUlNFQ0NJw5NOCgpQYXJhIGVsIGVqZW1wbG8sIHNlIHVzYXLDoSB1biBkYXRhIGZyYW1lIGRlIGVqZW1wbG8gcXVlIHZpZW5lIGRlbnRybyBkZWwgcGFxdWV0ZSBwcm9iIGxsYW1hZG8gY2FyZHMuCgpDb24gZWwgbcOpdG9kbyBpbnRlcnNlY3QoQSxCKSwgcmVhbGl6YXJlbW9zIGxhIGludGVyc2VjY2nDs24gZGUgbG9zIGRvcyBjb25qdW50b3MuIFNpZW5kbyBBLCB5IEIgc3ViY29uanVudG9zIGRlIHVuIGVzcGFjaW8gcHJvYmFiaWzDrXN0aWNvLgpQb3IgbWVkaW8gZGUgbGEgZnVuY2nDs24gc3Vic2V0KHgsLi4uKSwgb2J0ZW5lbW9zIHVuIHN1YmNvbmp1bnRvIGRlIHZhbG9yZXMgZGVsIGNvbmp1bnRvIHgsIHF1ZSBjdW1wbGUgY29uIGNpZXJ0YXMgY29uZGljaW9uZXMsIGVzdGFzIGRhZGFzIGVuIGxvcyBwYXJhbWV0cm9zIHNpZ3VpZW50ZXMgYSB4LgoKYGBge3J9CmxpYnJhcnkocHJvYikKUyA8LSBjYXJkcygpCkEgPC0gc3Vic2V0KFMsIHN1aXQgPT0gIkhlYXJ0IikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lcwpBIAoKCgpCIDwtIHN1YnNldChTLCByYW5rID09ICJBIiApICMjU29sbyBsb3MgcXVlIHNvbiBhc2VzCkIKCgppbnRlcnNlY3QoQSxCKQpgYGAKCgoKIyNQcm9iYWJpbGlkYWQKCgojI0VzcGFjaW8gbXVlc3RyYWwgZGlzY3JldG8KUGFyYSBjYWxjdWxhciBsYSBwcm9iYWJpbGlkYWQgZGUgdW4gZXZlbnRvIGVuIFIsIGVzIHBvc2libGUgdXNhciBlbCBwYXF1ZXRlIHByb2IuIApQYXJhIGVsIGVqZW1wbG8sIHNlIHVzYXLDoSB1biBlc3BhY2lvIG11ZXN0cmFsIGRlIGVqZW1wbG86IHRvc3Njb2luKG4pIGRldnVlbHZlIGVsIGVzcGFjaW8gbXVlc3RyYWwgZGUgbGFuemFyIG4gbW9uZWRhcyByZXBldMOtZGFtZW50ZS4gQWRlbcOhcywgY2FsY3VsYXJlbW9zIGxhIHByb2JhYmlsaWRhZCBkZSBvYnRlbmVyIHVuYSBjYXJhIGRlIGxhIHRpcmFkYSBkZSBsYXMgZG9zIG1vbmVkYXMuIFBhcmEgZXN0bywgdXNhcmVtb3MgZWwgb3BlcmFkb3IgeG9yLCBsYSBvcGVyYWNpw7NuIG5yb3coKSBwYXJhIG9idGVuZXIgbGEgY2FudGlkYWQgZGUgZmlsYXMgZGUgY2FkYSBjb25qdW50by4KYGBge3J9CmxpYnJhcnkocHJvYikKUzwtdG9zc2NvaW4oMikKQTwtc3Vic2V0KFMseG9yKHRvc3MxPT0iSCIsdG9zczI9PSJIIikpClBBPC1ucm93KEEpL25yb3coUykKUEEKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFudWFsIGRlIFByb2JhYmlsw61zdGljbyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMjIFBhcnRpY2lwYW50ZXMKCkVucmlxdWUgU3VhcmV6ICA1MDYxNjEwNDkKCkFyaWMgR3V0aWVycmV6ICA1MDYxNjIwMzAKCkVuIGVzdGEgc2VjY2nDs24gZW5jb250cmFyw6FzIHRvZG9zIGxvcyBjb25jZXB0b3MgbmVjZXNhcmlvcyBwYXJhIGluaWNpYXIgYSB0cmFiYWphciBjb24gaGVycmFtaWVudGFzIGVuZm9jYWRhcyBhbCBkZXNhcnJvbGxvIGRlIGxhIHByb2JhYmlsaWRhZCB5IGxhIGVzdGFkw61zdGljYS4KCiMjIFJlY3Vyc29zIE5lY2VzYXJpb3MKCiMjIyBQYXF1ZXRlIHByb2IKClBhcmEgaW5zdGFsYXIgdXNlIGxhIGluc3RydWNjacOzbiBpbnN0YWxsLnBhY2thZ2VzKCJwcm9iIikgeSBwYXJhIGNhcmdhciBsYSBsaWJyZXJpYSBsaWJyYXJ5KHByb2IpLiBFc3RhIGxpYnJlcsOtYSwgc2lydmUgcGFyYSB0cmFiYWphciBsb3Mgc2lndWllbnRlcyBhcGFydGFkb3MuCgojIyBDb25jZXB0b3MgQsOhc2ljb3MKCiMjIyBVbmnDs24KClBhcmEgZWwgZWplbXBsbywgc2UgdXNhcsOhIHVuIGRhdGEgZnJhbWUgZGUgZWplbXBsbyBxdWUgdmllbmUgZGVudHJvIGRlbCBwYXF1ZXRlIHByb2IgbGxhbWFkbyBjYXJkcy4KCkNvbiBlbCBtw6l0b2RvIHVuaW9uKEEsQiksIHJlYWxpemFyZW1vcyBsYSB1bmnDs24gZGUgbG9zIGRvcyBjb25qdW50b3MuIFNpZW5kbyBBLCB5IEIgc3ViY29uanVudG9zIGRlIHVuIGVzcGFjaW8gcHJvYmFiaWzDrXN0aWNvLgpQb3IgbWVkaW8gZGUgbGEgZnVuY2nDs24gc3Vic2V0KHgsLi4uKSwgb2J0ZW5lbW9zIHVuIHN1YmNvbmp1bnRvIGRlIHZhbG9yZXMgZGVsIGNvbmp1bnRvIHgsIHF1ZSBjdW1wbGUgY29uIGNpZXJ0YXMgY29uZGljaW9uZXMsIGVzdGFzIGRhZGFzIGVuIGxvcyBwYXJhbWV0cm9zIHNpZ3VpZW50ZXMgYSB4LgpgYGB7cn0KbGlicmFyeShwcm9iKQpTIDwtIGNhcmRzKCkKQSA8LSBzdWJzZXQoUywgc3VpdCA9PSAiSGVhcnQiKSMjRXZlbnRvIGRlIHNvbG8gY29yYXpvbmVzCkEgCgoKCkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gIkEiICkgIyNTb2xvIGxvcyBxdWUgc29uIGFzZXMKQgoKCnVuaW9uKEEsQikKYGBgCgoKIyMjIEludGVyc2VjY2nDs24KClBhcmEgZWwgZWplbXBsbywgc2UgdXNhcsOhIHVuIGRhdGEgZnJhbWUgZGUgZWplbXBsbyBxdWUgdmllbmUgZGVudHJvIGRlbCBwYXF1ZXRlIHByb2IgbGxhbWFkbyBjYXJkcy4KCkNvbiBlbCBtw6l0b2RvIGludGVyc2VjdChBLEIpLCByZWFsaXphcmVtb3MgbGEgaW50ZXJzZWNjacOzbiBkZSBsb3MgZG9zIGNvbmp1bnRvcy4gU2llbmRvIEEsIHkgQiBzdWJjb25qdW50b3MgZGUgdW4gZXNwYWNpbyBwcm9iYWJpbMOtc3RpY28uClBvciBtZWRpbyBkZSBsYSBmdW5jacOzbiBzdWJzZXQoeCwuLi4pLCBvYnRlbmVtb3MgdW4gc3ViY29uanVudG8gZGUgdmFsb3JlcyBkZWwgY29uanVudG8geCwgcXVlIGN1bXBsZSBjb24gY2llcnRhcyBjb25kaWNpb25lcywgZXN0YXMgZGFkYXMgZW4gbG9zIHBhcmFtZXRyb3Mgc2lndWllbnRlcyBhIHguCgpgYGB7cn0KbGlicmFyeShwcm9iKQpTIDwtIGNhcmRzKCkKQSA8LSBzdWJzZXQoUywgc3VpdCA9PSAiSGVhcnQiKSMjRXZlbnRvIGRlIHNvbG8gY29yYXpvbmVzCkEgCgoKCkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gIkEiICkgIyNTb2xvIGxvcyBxdWUgc29uIGFzZXMKQgoKCmludGVyc2VjdChBLEIpCmBgYAoKCgojIyBQcm9iYWJpbGlkYWQKCgojIyMgRXNwYWNpbyBtdWVzdHJhbCBkaXNjcmV0bwoKUGFyYSBjYWxjdWxhciBsYSBwcm9iYWJpbGlkYWQgZGUgdW4gZXZlbnRvIGVuIFIsIGVzIHBvc2libGUgdXNhciBlbCBwYXF1ZXRlIHByb2IuIApQYXJhIGVsIGVqZW1wbG8sIHNlIHVzYXLDoSB1biBlc3BhY2lvIG11ZXN0cmFsIGRlIGVqZW1wbG86IHRvc3Njb2luKG4pIGRldnVlbHZlIGVsIGVzcGFjaW8gbXVlc3RyYWwgZGUgbGFuemFyIG4gbW9uZWRhcyByZXBldMOtZGFtZW50ZS4gQWRlbcOhcywgY2FsY3VsYXJlbW9zIGxhIHByb2JhYmlsaWRhZCBkZSBvYnRlbmVyIHVuYSBjYXJhIGRlIGxhIHRpcmFkYSBkZSBsYXMgZG9zIG1vbmVkYXMuIFBhcmEgZXN0bywgdXNhcmVtb3MgZWwgb3BlcmFkb3IgeG9yLCBsYSBvcGVyYWNpw7NuIG5yb3coKSBwYXJhIG9idGVuZXIgbGEgY2FudGlkYWQgZGUgZmlsYXMgZGUgY2FkYSBjb25qdW50by4KYGBge3J9CmxpYnJhcnkocHJvYikKUzwtdG9zc2NvaW4oMikKQTwtc3Vic2V0KFMseG9yKHRvc3MxPT0iSCIsdG9zczI9PSJIIikpClBBPC1ucm93KEEpL25yb3coUykKUEEKYGBgCgo=</div>
 
 
 

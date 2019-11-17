@@ -9,15 +9,17 @@ Enrique Suarez  506161049
 
 Aric Gutierrez  506162030
 
-### Conceptos Básicos
-
 En esta sección encontrarás todos los conceptos necesarios para iniciar a trabajar con herramientas enfocadas al desarrollo de la probabilidad y la estadística.
 
-###Paquete prob
+## Recursos Necesarios
+
+### Paquete prob
 
 Para instalar use la instrucción install.packages("prob") y para cargar la libreria library(prob). Esta librería, sirve para trabajar los siguientes apartados.
 
-###UNIÓN
+## Conceptos Básicos
+
+### Unión
 
 Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.
 
@@ -39,7 +41,7 @@ union(A,B)
 ```
 
 
-###INTERSECCIÓN
+### Intersección
 
 Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.
 
@@ -63,10 +65,11 @@ intersect(A,B)
 
 
 
-##Probabilidad
+## Probabilidad
 
 
-##Espacio muestral discreto
+### Espacio muestral discreto
+
 Para calcular la probabilidad de un evento en R, es posible usar el paquete prob. 
 Para el ejemplo, se usará un espacio muestral de ejemplo: tosscoin(n) devuelve el espacio muestral de lanzar n monedas repetídamente. Además, calcularemos la probabilidad de obtener una cara de la tirada de las dos monedas. Para esto, usaremos el operador xor, la operación nrow() para obtener la cantidad de filas de cada conjunto.
 ```{r}
