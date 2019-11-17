@@ -1757,20 +1757,52 @@ summary {
 <div id="conceptos-básicos" class="section level3">
 <h3>Conceptos Básicos</h3>
 <p>En esta sección encontrarás todos los conceptos necesarios para iniciar a trabajar con herramientas enfocadas al desarrollo de la probabilidad y la estadística.</p>
+<p>##Paquete prob</p>
+<p>Para instalar use la instrucción install.packages(“prob”) y para cargar la libreria library(prob). Esta librería, sirve para trabajar los siguientes apartados.</p>
+<p>##UNIÓN</p>
+<p>Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.</p>
+<p>Con el método union(A,B), realizaremos la unión de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico. Por medio de la función subset(x,…), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGxvdChjYXJzKVxuYGBgIn0= -->
-<pre class="r"><code>plot(cars)</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcblxuXG5cbkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gXCJBXCIgKSAjI1NvbG8gbG9zIHF1ZSBzb24gYXNlc1xuQlxuXG5cbnVuaW9uKEEsQilcbmBgYCJ9 -->
+<pre class="r"><code>library(prob)
+S &lt;- cards()
+A &lt;- subset(S, suit == &quot;Heart&quot;)##Evento de solo corazones
+A 
+
+
+
+B &lt;- subset(S, rank == &quot;A&quot; ) ##Solo los que son ases
+B
+
+
+union(A,B)</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Cmd+Option+I</em>.</p>
-<p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Cmd+Shift+K</em> to preview the HTML file).</p>
-<p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
+<p>##INTERSECCIÓN</p>
+<p>Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.</p>
+<p>Con el método intersect(A,B), realizaremos la intersección de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico. Por medio de la función subset(x,…), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.</p>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcblxuXG5cbkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gXCJBXCIgKSAjI1NvbG8gbG9zIHF1ZSBzb24gYXNlc1xuQlxuXG5cbmludGVyc2VjdChBLEIpXG5gYGAifQ== -->
+<pre class="r"><code>library(prob)
+S &lt;- cards()
+A &lt;- subset(S, suit == &quot;Heart&quot;)##Evento de solo corazones
+A 
+
+
+
+B &lt;- subset(S, rank == &quot;A&quot; ) ##Solo los que son ases
+B
+
+
+intersect(A,B)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFudWFsIGRlIFByb2JhYmlsw61zdGljbyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMjIFBhcnRpY2lwYW50ZXMKCkVucmlxdWUgU3VhcmV6ICA1MDYxNjEwNDkKCkFyaWMgR3V0aWVycmV6ICA1MDYxNjIwMzAKCiMjIyBDb25jZXB0b3MgQsOhc2ljb3MKCkVuIGVzdGEgc2VjY2nDs24gZW5jb250cmFyw6FzIHRvZG9zIGxvcyBjb25jZXB0b3MgbmVjZXNhcmlvcyBwYXJhIGluaWNpYXIgYSB0cmFiYWphciBjb24gaGVycmFtaWVudGFzIGVuZm9jYWRhcyBhbCBkZXNhcnJvbGxvIGRlIGxhIHByb2JhYmlsaWRhZCB5IGxhIGVzdGFkw61zdGljYS4KCmBgYHtyfQpwbG90KGNhcnMpCmBgYAoKQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkNtZCtPcHRpb24rSSouCgpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkNtZCtTaGlmdCtLKiB0byBwcmV2aWV3IHRoZSBIVE1MIGZpbGUpLiAKClRoZSBwcmV2aWV3IHNob3dzIHlvdSBhIHJlbmRlcmVkIEhUTUwgY29weSBvZiB0aGUgY29udGVudHMgb2YgdGhlIGVkaXRvci4gQ29uc2VxdWVudGx5LCB1bmxpa2UgKktuaXQqLCAqUHJldmlldyogZG9lcyBub3QgcnVuIGFueSBSIGNvZGUgY2h1bmtzLiBJbnN0ZWFkLCB0aGUgb3V0cHV0IG9mIHRoZSBjaHVuayB3aGVuIGl0IHdhcyBsYXN0IHJ1biBpbiB0aGUgZWRpdG9yIGlzIGRpc3BsYXllZC4K</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFudWFsIGRlIFByb2JhYmlsw61zdGljbyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMjIFBhcnRpY2lwYW50ZXMKCkVucmlxdWUgU3VhcmV6ICA1MDYxNjEwNDkKCkFyaWMgR3V0aWVycmV6ICA1MDYxNjIwMzAKCiMjIyBDb25jZXB0b3MgQsOhc2ljb3MKCkVuIGVzdGEgc2VjY2nDs24gZW5jb250cmFyw6FzIHRvZG9zIGxvcyBjb25jZXB0b3MgbmVjZXNhcmlvcyBwYXJhIGluaWNpYXIgYSB0cmFiYWphciBjb24gaGVycmFtaWVudGFzIGVuZm9jYWRhcyBhbCBkZXNhcnJvbGxvIGRlIGxhIHByb2JhYmlsaWRhZCB5IGxhIGVzdGFkw61zdGljYS4KCiMjUGFxdWV0ZSBwcm9iCgpQYXJhIGluc3RhbGFyIHVzZSBsYSBpbnN0cnVjY2nDs24gaW5zdGFsbC5wYWNrYWdlcygicHJvYiIpIHkgcGFyYSBjYXJnYXIgbGEgbGlicmVyaWEgbGlicmFyeShwcm9iKS4gRXN0YSBsaWJyZXLDrWEsIHNpcnZlIHBhcmEgdHJhYmFqYXIgbG9zIHNpZ3VpZW50ZXMgYXBhcnRhZG9zLgoKIyNVTknDk04KClBhcmEgZWwgZWplbXBsbywgc2UgdXNhcsOhIHVuIGRhdGEgZnJhbWUgZGUgZWplbXBsbyBxdWUgdmllbmUgZGVudHJvIGRlbCBwYXF1ZXRlIHByb2IgbGxhbWFkbyBjYXJkcy4KCkNvbiBlbCBtw6l0b2RvIHVuaW9uKEEsQiksIHJlYWxpemFyZW1vcyBsYSB1bmnDs24gZGUgbG9zIGRvcyBjb25qdW50b3MuIFNpZW5kbyBBLCB5IEIgc3ViY29uanVudG9zCmRlIHVuIGVzcGFjaW8gcHJvYmFiaWzDrXN0aWNvLgpQb3IgbWVkaW8gZGUgbGEgZnVuY2nDs24gc3Vic2V0KHgsLi4uKSwgb2J0ZW5lbW9zIHVuIHN1YmNvbmp1bnRvIGRlIHZhbG9yZXMgZGVsIGNvbmp1bnRvIHgsIHF1ZSBjdW1wbGUgY29uIGNpZXJ0YXMgY29uZGljaW9uZXMsIGVzdGFzIGRhZGFzIGVuIGxvcyBwYXJhbWV0cm9zIHNpZ3VpZW50ZXMgYSB4LgpgYGB7cn0KbGlicmFyeShwcm9iKQpTIDwtIGNhcmRzKCkKQSA8LSBzdWJzZXQoUywgc3VpdCA9PSAiSGVhcnQiKSMjRXZlbnRvIGRlIHNvbG8gY29yYXpvbmVzCkEgCgoKCkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gIkEiICkgIyNTb2xvIGxvcyBxdWUgc29uIGFzZXMKQgoKCnVuaW9uKEEsQikKYGBgCgoKIyNJTlRFUlNFQ0NJw5NOCgpQYXJhIGVsIGVqZW1wbG8sIHNlIHVzYXLDoSB1biBkYXRhIGZyYW1lIGRlIGVqZW1wbG8gcXVlIHZpZW5lIGRlbnRybyBkZWwgcGFxdWV0ZSBwcm9iIGxsYW1hZG8gY2FyZHMuCgpDb24gZWwgbcOpdG9kbyBpbnRlcnNlY3QoQSxCKSwgcmVhbGl6YXJlbW9zIGxhIGludGVyc2VjY2nDs24gZGUgbG9zIGRvcyBjb25qdW50b3MuIFNpZW5kbyBBLCB5IEIgc3ViY29uanVudG9zCmRlIHVuIGVzcGFjaW8gcHJvYmFiaWzDrXN0aWNvLgpQb3IgbWVkaW8gZGUgbGEgZnVuY2nDs24gc3Vic2V0KHgsLi4uKSwgb2J0ZW5lbW9zIHVuIHN1YmNvbmp1bnRvIGRlIHZhbG9yZXMgZGVsIGNvbmp1bnRvIHgsIHF1ZSBjdW1wbGUgY29uIGNpZXJ0YXMgY29uZGljaW9uZXMsIGVzdGFzIGRhZGFzIGVuIGxvcyBwYXJhbWV0cm9zIHNpZ3VpZW50ZXMgYSB4LgoKYGBge3J9CmxpYnJhcnkocHJvYikKUyA8LSBjYXJkcygpCkEgPC0gc3Vic2V0KFMsIHN1aXQgPT0gIkhlYXJ0IikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lcwpBIAoKCgpCIDwtIHN1YnNldChTLCByYW5rID09ICJBIiApICMjU29sbyBsb3MgcXVlIHNvbiBhc2VzCkIKCgppbnRlcnNlY3QoQSxCKQpgYGAK</div>
 
 
 
