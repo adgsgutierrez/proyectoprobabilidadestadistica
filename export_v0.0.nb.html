@@ -1766,9 +1766,30 @@ summary {
 <!-- rnb-text-begin -->
 <p>##Paquete prob</p>
 <p>Para instalar use la instrucción install.packages(“prob”) y para cargar la libreria library(prob). Esta librería, sirve para trabajar los siguientes apartados.</p>
-<p>#UNIÓN</p>
+<p>##UNIÓN</p>
 <p>Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.</p>
-<p>Con el método union(A,B), realizaremos la unión de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico.</p>
+<p>Con el método union(A,B), realizaremos la unión de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico. Por medio de la función subset(x,…), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcblxuXG5cbkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gXCJBXCIgKSAjI1NvbG8gbG9zIHF1ZSBzb24gYXNlc1xuQlxuXG5cbnVuaW9uKEEsQilcbmBgYCJ9 -->
+<pre class="r"><code>library(prob)
+S &lt;- cards()
+A &lt;- subset(S, suit == &quot;Heart&quot;)##Evento de solo corazones
+A 
+
+
+
+B &lt;- subset(S, rank == &quot;A&quot; ) ##Solo los que son ases
+B
+
+
+union(A,B)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>##INTERSECCIÓN</p>
+<p>Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.</p>
+<p>Con el método intersect(A,B), realizaremos la intersección de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico. Por medio de la función subset(x,…), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcbmBgYCJ9 -->
@@ -1777,7 +1798,7 @@ S &lt;- cards()
 A &lt;- subset(S, suit == &quot;Heart&quot;)##Evento de solo corazones
 A </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MTN9LCJyZGYiOiJINHNJQUFBQUFBQUFBNVdTeTFQQ01CREdReHBBcWpqTWNQVDlQdEVCVk5Takl3ZEhUK3FGYTJpRGRnZ0prN2JxWHc5dVE5WXBqRHJqNGRkOGVlenV0Mm1lKzRPdVAvQUpJWlI0akJIcWdXUVVQaVhDU0MwZlB3bnhtdllBOGVvdzF1Mm1uUk43R2lnREZhQUtyQUY1WUo1MEhkaFl4Q3dsclVqeExtUUNxbUYzWGFrdWluTVVGeWd1VWZSUVhLRzRSbkhqQk8yMGNla0J4Uk9LUnhTM0s1N0tvZVFKV3ZvMk91SmhxZzJvV2FGOTcvL2twZWpjWldjdU83dVQyZERwYWovbUU2MGlkSE12dUVseDhqTGxrVmdrOGVaL1dWenVTUEdKd0k0bzFqUmNqVkVuV1p5dUJOV00vZ2d3RUJ2ZUFyYUJIV0FYMkFQMmdRUGdFRGdDam9FVDRCUTQrOFdySC9HVUJ5TUQ2WC93VzlYVE5OWUtDdE9tZTFURjRKSlpXV2hrS2pjYXRjSzNUSTFiblo1N2RTVkh2VEFXWG0xZWs2R3pNdDZpVUsreEVuaHprZytGZEpOTnVCRjdJY0hVeEFyL2lRK3JTWkRxbE9NNVA5UVNWMnh6WlBZRnRMckFuVjhEQUFBPSJ9 -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MTN9LCJyZGYiOiJINHNJQUFBQUFBQUFBNVdTeTFQQ01CREdReHBBcXFnekhIMi9UM1FVMzBkSERvNmUxQXZYMEFidEVCSW1UZFcvSHR6R3JGTVlkY2JEci9ueTJOMXYwengxZTUyd0Z4SkNLQWtZSXpRQXlTaDhLb1NSUmpGK0VCSzAzQUVTTkdGc3VrMDNKKzQwVUFWcVFCMVlBSXJBSXVraXNQUVZNNU8wSnNXYmtCbW9WYmZyUzNWUW5LSTRRM0dPNGdMRkpZb3JGTmRlMEpOalhMcEg4WWppQWNYTm5LZHFMSG1HbHI2TkRuaHN0UUUxS2JVZi9KK2lGSjM2N014blo3Y3k3M3RkNzZaOHBGV0NidTRFTnhZbnoyT2VpSzhrd2ZRdmk3TWRLVDRTMkJIRm1vYXJJZW9zVCsxY1VNUG85d2dEc2VFMVlCM1lBRGFCTFdBYjJBRjJnVDFnSHpnQURvR2pYN3lHQ2JjOEdoaEkvNFBmdWg3YlZDc29URnYrVVpXREsyWnVZU1ZYaGRHa0hiL21hdGp1K0VkWDhUUkxZK25SRmlVWkdxdmlKUXIxa2lxQkZ5ZDVYMGcvV1lZTGNmY1JqVTJxOEplRXNKcEZWbHVPNThKWVMxeHh2WkhKSndaZDJrQmVBd0FBIn0= -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"2","2":"Heart","_rn_":"27"},{"1":"3","2":"Heart","_rn_":"28"},{"1":"4","2":"Heart","_rn_":"29"},{"1":"5","2":"Heart","_rn_":"30"},{"1":"6","2":"Heart","_rn_":"31"},{"1":"7","2":"Heart","_rn_":"32"},{"1":"8","2":"Heart","_rn_":"33"},{"1":"9","2":"Heart","_rn_":"34"},{"1":"10","2":"Heart","_rn_":"35"},{"1":"J","2":"Heart","_rn_":"36"},{"1":"Q","2":"Heart","_rn_":"37"},{"1":"K","2":"Heart","_rn_":"38"},{"1":"A","2":"Heart","_rn_":"39"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[13]},"pages":{}}}
@@ -1791,31 +1812,29 @@ A </code></pre>
 B &lt;- subset(S, rank == &quot;A&quot; ) ##Solo los que son ases
 B</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6NH0sInJkZiI6Ikg0c0lBQUFBQUFBQUEzMlN3VTdETUF5RzNUUmxXcVdoU2R4NEFVNnIyQmdEam9nZEpqZ0JsMTJ6Tm9OcVdWS2xLZkQwRzBrYm83WUNEbTQvTzdIOTIrM0xjajJMMXpFQUVBZ3BCUkphcE1RK0FxQXdkTzh2Z1BDc3ZnRGh5SjFhRzNXdGszQWkrQWNYcGFWeGZlckx6QkN1RU9ZSTF3Z0xoQnVFVzRRN0QyUjZpYUZIaEdlRUo0VDducVlvRmF4RVNUOUN0eXcxU2xzNnRFWUxtbEVoYkh4WGhoeDlKdldaOUVGVUc4K0RaYzcyU21iWWFjV1pOdWk4Rml6alRaSHcrRi83cmxySjloelZFdXlwbWR3aGwxVnVla2xEclQ0VFRHeC9wM05yRjlibWYraUlNMlpZc3RVMjlSY3RBMVdZWEVsYmxMaWZJT29sQjdvWEdGZlNpY2dtNlhzbGQ1UHB3blh3YXcyOG9xQ2x6cS9iOWFTb0xNSU5jZm1XUzQ1YkVXekRoWGRPN2JUMXNFbWhjNG43am0yMFRJd3lETy9GcVJJWXFZZUR3emZJR3ZQQzh3SUFBQT09In0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6NH0sInJkZiI6Ikg0c0lBQUFBQUFBQUEzMlNUVS9ETUF5RzNUUmxXcVVCRWpmK0FLZFZVTWJYRWJFRGdoTncyVFZyTTZpV0pWV2FBcjkrVzlMR3FLMkFnOXZIVG15L2R2czZYNlR4SWdZQUFpR2xRRUtMbE5oSEFCVEc3djBORUo0MEZ5Q2N1Rk5yazc3MUVnNEUvK1Npc25UY25Qb3lLY0lsd2d6aEN1RWE0UWJoRnVIT0E3azR4OUFUd2d2Q004TDlRRk9VQ1ZhaHBCK2hLNVlacFMxdE82TUY3YWdRdHI0clEzWStrL3BNK2lEcXBlZlJ2R0FiSlhQczlNaVpOdWk4bFN6bmJaRnc5MS83dmxySk5oelZFdXlwbVZ3alYzVmhCa2xqcmI0U1RPeCtwMU5yWjlabWYraUljMlpZc3RJMjlSY3RJMVdhUWtsYmxMaWZJQm9rQjNvUU9LcWxFNUZQczQ5YXJxZXBhK0MzR25oQlFVZWMzN1pyU1ZGWWhBdmk4cjJRSEpjaTJKSUw3eHphWVp0WmsxSVhFdGNkMjJpVkdHVVkzb3N6SlREU3pBYmJQYnRFdTNUeUFnQUEifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
 {"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"A","2":"Club","_rn_":"13"},{"1":"A","2":"Diamond","_rn_":"26"},{"1":"A","2":"Heart","_rn_":"39"},{"1":"A","2":"Spade","_rn_":"52"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[4]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5cbnVuaW9uKEEsQilcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuXG5cbmludGVyc2VjdChBLEIpXG5gYGAifQ== -->
 <pre class="r"><code>
 
-union(A,B)</code></pre>
+intersect(A,B)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MTZ9LCJyZGYiOiJINHNJQUFBQUFBQUFBNVdUVFUvQ1FCQ0d0OXNGcElwcHd1K2dnWll2ajBZT1JrL3FoZXZTTHRwUXRxUWY2cThIcDJWbkxFUk5QTHp0MDBsbjN0bVo5bm14OUoybHd4amp6QmFDY1J0UWNMaFlUTEJ1ZGY5a3pPN1hMekM3QjNjWDFET3lqbkZXWjRGYW9EYW9BN29BVlFXcTRwZWdxKys4RTROMm90NVZrbE5sWStzakJBaGpoQW5DRkdHR01FZTRNY0JIUXd3OUlEd2hQQ0xjbnZYVUNoT1pZMHZVNkZxR1Jab0I3UnVqYUk3Z3Z4SkhXMzR3dFlSeEVuZEp1VExjV2NSeW0rb0lPN3RYTWl2dzRXVW5JM1VzWWgvK2F2ZjBkRnB1Rlo2T28yY205UVk1TCtQaUxLbWJwUjllTTlHbENlT0d1RDhsbWhITmlXZ253WkJvUk9RVFViMWdURFFoSW8rQVBBTHlDTWhqNHY4eUZ5ZVNoZlRXR1J6bGg5bDAwbDBScHhvT3lmdm1nMjRtVzlsWndDMTFOWlJvRUw2VmVqTVlUYzBYYnhuaFgrS3lreittOGhUWVdRczNwdlJyckJWdUtaRXJsWmlIYTVoK1BYeHZsOFVhOSs5QU5QZUt0SkQ0bmhPbUNVYnF3N0g5RjlnV2JnUGpBd0FBIn0= -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbImRhdGEuZnJhbWUiXSwibmNvbCI6MiwibnJvdyI6MX0sInJkZiI6Ikg0c0lBQUFBQUFBQUEzMlJ6VTdETUJDRU40NUwxVWdGSkI2Q1V5TUkvMGRFRHdoT3dLVlhOM0VocW10WGpnTThmWXVUZUZDSmdFdjhlYjI3TTd0NW5zNnlaSllRRWFPWWMyS3hSODc4SnlKT28rYjhKSXFQMmdTS3grMEQwYmlYdEtma3UxU1ZwOFAyTlpSbWdEUEFPZUFDY0FtNEFsd0RiZ0t3MHhPRUhnQlBnRWZBYmMvVElGZWlncVZ2b3d1Uk8yTTliWGJHaWJ0U3RnM1pQR1R6TzFYUEF3K25wVmdaWGFEN3ZSVFc0Zkt5Rm9Yc21zVGIveVIvT3RSaUplR1FRZE1LdlFSWGRlbDZSU05yUGxJVVlvRGpQN1NUUWppUkxxeFAvMFYvYU5hdU5ObzNZczBQSHZTS0k5c0xITlM2RVM0bStWdXRsNU9zRVFnR29oMHp1OHc2U1E1akF5eEY2dGRTU3l4Q2libFU0Ykx2QjJ6blM5ZTIxRmh4NHFOVjZvd1R5RXR5b3hCcFo2UE5GMEgwamZ6T0FnQUEifQ== -->
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"A","2":"Club","_rn_":"13"},{"1":"A","2":"Diamond","_rn_":"26"},{"1":"2","2":"Heart","_rn_":"27"},{"1":"3","2":"Heart","_rn_":"28"},{"1":"4","2":"Heart","_rn_":"29"},{"1":"5","2":"Heart","_rn_":"30"},{"1":"6","2":"Heart","_rn_":"31"},{"1":"7","2":"Heart","_rn_":"32"},{"1":"8","2":"Heart","_rn_":"33"},{"1":"9","2":"Heart","_rn_":"34"},{"1":"10","2":"Heart","_rn_":"35"},{"1":"J","2":"Heart","_rn_":"36"},{"1":"Q","2":"Heart","_rn_":"37"},{"1":"K","2":"Heart","_rn_":"38"},{"1":"A","2":"Heart","_rn_":"39"},{"1":"A","2":"Spade","_rn_":"52"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[16]},"pages":{}}}
+{"columns":[{"label":[""],"name":["_rn_"],"type":[""],"align":["left"]},{"label":["rank"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["suit"],"name":[2],"type":["fctr"],"align":["left"]}],"data":[{"1":"A","2":"Heart","_rn_":"39"}],"options":{"columns":{"min":{},"max":[10],"total":[2]},"rows":{"min":[10],"max":[10],"total":[1]},"pages":{}}}
   </script>
 </div>
 <!-- rnb-frame-end -->
 <!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFudWFsIGRlIFByb2JhYmlsw61zdGljbyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMjIFBhcnRpY2lwYW50ZXMKCkVucmlxdWUgU3VhcmV6ICA1MDYxNjEwNDkKCkFyaWMgR3V0aWVycmV6ICA1MDYxNjIwMzAKCiMjIyBDb25jZXB0b3MgQsOhc2ljb3MKCkVuIGVzdGEgc2VjY2nDs24gZW5jb250cmFyw6FzIHRvZG9zIGxvcyBjb25jZXB0b3MgbmVjZXNhcmlvcyBwYXJhIGluaWNpYXIgYSB0cmFiYWphciBjb24gaGVycmFtaWVudGFzIGVuZm9jYWRhcyBhbCBkZXNhcnJvbGxvIGRlIGxhIHByb2JhYmlsaWRhZCB5IGxhIGVzdGFkw61zdGljYS4KCmBgYHtyfQpwbG90KGNhcnMpCmBgYAojI1BhcXVldGUgcHJvYgoKUGFyYSBpbnN0YWxhciB1c2UgbGEgaW5zdHJ1Y2Npw7NuIGluc3RhbGwucGFja2FnZXMoInByb2IiKSB5IHBhcmEgY2FyZ2FyIGxhIGxpYnJlcmlhIGxpYnJhcnkocHJvYikuIEVzdGEgbGlicmVyw61hLCBzaXJ2ZSBwYXJhIHRyYWJhamFyIGxvcyBzaWd1aWVudGVzIGFwYXJ0YWRvcy4KCiNVTknDk04KClBhcmEgZWwgZWplbXBsbywgc2UgdXNhcsOhIHVuIGRhdGEgZnJhbWUgZGUgZWplbXBsbyBxdWUgdmllbmUgZGVudHJvIGRlbCBwYXF1ZXRlIHByb2IgbGxhbWFkbyBjYXJkcy4KCkNvbiBlbCBtw6l0b2RvIHVuaW9uKEEsQiksIHJlYWxpemFyZW1vcyBsYSB1bmnDs24gZGUgbG9zIGRvcyBjb25qdW50b3MuIFNpZW5kbyBBLCB5IEIgc3ViY29uanVudG9zCmRlIHVuIGVzcGFjaW8gcHJvYmFiaWzDrXN0aWNvLgpgYGB7cn0KbGlicmFyeShwcm9iKQpTIDwtIGNhcmRzKCkKQSA8LSBzdWJzZXQoUywgc3VpdCA9PSAiSGVhcnQiKSMjRXZlbnRvIGRlIHNvbG8gY29yYXpvbmVzCkEgCgoKCkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gIkEiICkgIyNTb2xvIGxvcyBxdWUgc29uIGFzZXMKQgoKCnVuaW9uKEEsQikKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFudWFsIGRlIFByb2JhYmlsw61zdGljbyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMjIFBhcnRpY2lwYW50ZXMKCkVucmlxdWUgU3VhcmV6ICA1MDYxNjEwNDkKCkFyaWMgR3V0aWVycmV6ICA1MDYxNjIwMzAKCiMjIyBDb25jZXB0b3MgQsOhc2ljb3MKCkVuIGVzdGEgc2VjY2nDs24gZW5jb250cmFyw6FzIHRvZG9zIGxvcyBjb25jZXB0b3MgbmVjZXNhcmlvcyBwYXJhIGluaWNpYXIgYSB0cmFiYWphciBjb24gaGVycmFtaWVudGFzIGVuZm9jYWRhcyBhbCBkZXNhcnJvbGxvIGRlIGxhIHByb2JhYmlsaWRhZCB5IGxhIGVzdGFkw61zdGljYS4KCmBgYHtyfQpwbG90KGNhcnMpCmBgYAojI1BhcXVldGUgcHJvYgoKUGFyYSBpbnN0YWxhciB1c2UgbGEgaW5zdHJ1Y2Npw7NuIGluc3RhbGwucGFja2FnZXMoInByb2IiKSB5IHBhcmEgY2FyZ2FyIGxhIGxpYnJlcmlhIGxpYnJhcnkocHJvYikuIEVzdGEgbGlicmVyw61hLCBzaXJ2ZSBwYXJhIHRyYWJhamFyIGxvcyBzaWd1aWVudGVzIGFwYXJ0YWRvcy4KCiMjVU5Jw5NOCgpQYXJhIGVsIGVqZW1wbG8sIHNlIHVzYXLDoSB1biBkYXRhIGZyYW1lIGRlIGVqZW1wbG8gcXVlIHZpZW5lIGRlbnRybyBkZWwgcGFxdWV0ZSBwcm9iIGxsYW1hZG8gY2FyZHMuCgpDb24gZWwgbcOpdG9kbyB1bmlvbihBLEIpLCByZWFsaXphcmVtb3MgbGEgdW5pw7NuIGRlIGxvcyBkb3MgY29uanVudG9zLiBTaWVuZG8gQSwgeSBCIHN1YmNvbmp1bnRvcwpkZSB1biBlc3BhY2lvIHByb2JhYmlsw61zdGljby4KUG9yIG1lZGlvIGRlIGxhIGZ1bmNpw7NuIHN1YnNldCh4LC4uLiksIG9idGVuZW1vcyB1biBzdWJjb25qdW50byBkZSB2YWxvcmVzIGRlbCBjb25qdW50byB4LCBxdWUgY3VtcGxlIGNvbiBjaWVydGFzIGNvbmRpY2lvbmVzLCBlc3RhcyBkYWRhcyBlbiBsb3MgcGFyYW1ldHJvcyBzaWd1aWVudGVzIGEgeC4KYGBge3J9CmxpYnJhcnkocHJvYikKUyA8LSBjYXJkcygpCkEgPC0gc3Vic2V0KFMsIHN1aXQgPT0gIkhlYXJ0IikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lcwpBIAoKCgpCIDwtIHN1YnNldChTLCByYW5rID09ICJBIiApICMjU29sbyBsb3MgcXVlIHNvbiBhc2VzCkIKCgp1bmlvbihBLEIpCmBgYAoKCiMjSU5URVJTRUNDScOTTgoKUGFyYSBlbCBlamVtcGxvLCBzZSB1c2Fyw6EgdW4gZGF0YSBmcmFtZSBkZSBlamVtcGxvIHF1ZSB2aWVuZSBkZW50cm8gZGVsIHBhcXVldGUgcHJvYiBsbGFtYWRvIGNhcmRzLgoKQ29uIGVsIG3DqXRvZG8gaW50ZXJzZWN0KEEsQiksIHJlYWxpemFyZW1vcyBsYSBpbnRlcnNlY2Npw7NuIGRlIGxvcyBkb3MgY29uanVudG9zLiBTaWVuZG8gQSwgeSBCIHN1YmNvbmp1bnRvcwpkZSB1biBlc3BhY2lvIHByb2JhYmlsw61zdGljby4KUG9yIG1lZGlvIGRlIGxhIGZ1bmNpw7NuIHN1YnNldCh4LC4uLiksIG9idGVuZW1vcyB1biBzdWJjb25qdW50byBkZSB2YWxvcmVzIGRlbCBjb25qdW50byB4LCBxdWUgY3VtcGxlIGNvbiBjaWVydGFzIGNvbmRpY2lvbmVzLCBlc3RhcyBkYWRhcyBlbiBsb3MgcGFyYW1ldHJvcyBzaWd1aWVudGVzIGEgeC4KCmBgYHtyfQpsaWJyYXJ5KHByb2IpClMgPC0gY2FyZHMoKQpBIDwtIHN1YnNldChTLCBzdWl0ID09ICJIZWFydCIpIyNFdmVudG8gZGUgc29sbyBjb3Jhem9uZXMKQSAKCgoKQiA8LSBzdWJzZXQoUywgcmFuayA9PSAiQSIgKSAjI1NvbG8gbG9zIHF1ZSBzb24gYXNlcwpCCgoKaW50ZXJzZWN0KEEsQikKYGBgCg==</div>
 
 
 

@@ -20,12 +20,13 @@ plot(cars)
 
 Para instalar use la instrucción install.packages("prob") y para cargar la libreria library(prob). Esta librería, sirve para trabajar los siguientes apartados.
 
-#UNIÓN
+##UNIÓN
 
 Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.
 
 Con el método union(A,B), realizaremos la unión de los dos conjuntos. Siendo A, y B subconjuntos
 de un espacio probabilístico.
+Por medio de la función subset(x,...), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.
 ```{r}
 library(prob)
 S <- cards()
@@ -41,3 +42,26 @@ B
 union(A,B)
 ```
 
+
+##INTERSECCIÓN
+
+Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.
+
+Con el método intersect(A,B), realizaremos la intersección de los dos conjuntos. Siendo A, y B subconjuntos
+de un espacio probabilístico.
+Por medio de la función subset(x,...), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.
+
+```{r}
+library(prob)
+S <- cards()
+A <- subset(S, suit == "Heart")##Evento de solo corazones
+A 
+
+
+
+B <- subset(S, rank == "A" ) ##Solo los que son ases
+B
+
+
+intersect(A,B)
+```
