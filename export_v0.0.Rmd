@@ -13,16 +13,15 @@ Aric Gutierrez  506162030
 
 En esta sección encontrarás todos los conceptos necesarios para iniciar a trabajar con herramientas enfocadas al desarrollo de la probabilidad y la estadística.
 
-##Paquete prob
+###Paquete prob
 
 Para instalar use la instrucción install.packages("prob") y para cargar la libreria library(prob). Esta librería, sirve para trabajar los siguientes apartados.
 
-##UNIÓN
+###UNIÓN
 
 Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.
 
-Con el método union(A,B), realizaremos la unión de los dos conjuntos. Siendo A, y B subconjuntos
-de un espacio probabilístico.
+Con el método union(A,B), realizaremos la unión de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico.
 Por medio de la función subset(x,...), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.
 ```{r}
 library(prob)
@@ -40,12 +39,11 @@ union(A,B)
 ```
 
 
-##INTERSECCIÓN
+###INTERSECCIÓN
 
 Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.
 
-Con el método intersect(A,B), realizaremos la intersección de los dos conjuntos. Siendo A, y B subconjuntos
-de un espacio probabilístico.
+Con el método intersect(A,B), realizaremos la intersección de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico.
 Por medio de la función subset(x,...), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.
 
 ```{r}
@@ -62,3 +60,20 @@ B
 
 intersect(A,B)
 ```
+
+
+
+##Probabilidad
+
+
+##Espacio muestral discreto
+Para calcular la probabilidad de un evento en R, es posible usar el paquete prob. 
+Para el ejemplo, se usará un espacio muestral de ejemplo: tosscoin(n) devuelve el espacio muestral de lanzar n monedas repetídamente. Además, calcularemos la probabilidad de obtener una cara de la tirada de las dos monedas. Para esto, usaremos el operador xor, la operación nrow() para obtener la cantidad de filas de cada conjunto.
+```{r}
+library(prob)
+S<-tosscoin(2)
+A<-subset(S,xor(toss1=="H",toss2=="H"))
+PA<-nrow(A)/nrow(S)
+PA
+```
+
