@@ -16,9 +16,28 @@ En esta sección encontrarás todos los conceptos necesarios para iniciar a trab
 ```{r}
 plot(cars)
 ```
+##Paquete prob
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+Para instalar use la instrucción install.packages("prob") y para cargar la libreria library(prob). Esta librería, sirve para trabajar los siguientes apartados.
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+#UNIÓN
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.
+
+Con el método union(A,B), realizaremos la unión de los dos conjuntos. Siendo A, y B subconjuntos
+de un espacio probabilístico.
+```{r}
+library(prob)
+S <- cards()
+A <- subset(S, suit == "Heart")##Evento de solo corazones
+A 
+
+
+
+B <- subset(S, rank == "A" ) ##Solo los que son ases
+B
+
+
+union(A,B)
+```
+
