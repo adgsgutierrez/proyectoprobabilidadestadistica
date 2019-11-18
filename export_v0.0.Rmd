@@ -13,12 +13,69 @@ Aric Gutierrez  506162030
 En esta sección encontrarás todos los conceptos necesarios para iniciar a trabajar con herramientas enfocadas al desarrollo de la probabilidad y la estadística.
 
 ### Instalación de R
+1.	lo primero que se debe hacer es instalar R, para eso deberá Dirigirse al siguiente link: https://cran.r-project.org/ dependiendo del sistema operativo de su dispositivo escoja una de las siguientes opciones:
+
+#![Desviacion](images/instalacion/inicio.PNG)
+
+2. Consecuentemente este nos direcciona a otra página en la cual podemos descargar R dándole click en Download. Así descargamos la versión más reciente.
+
+#![Desviacion](images/instalacion/paso1.PNG)
+
+Una vez descargado el programa, procedemos a la instalación
+
+### Pasos 
+
+PASO 1: Seleccionar idioma
+
+#![Desviacion](images/instalacion/p1.PNG)
+
+PASO 2: Continuando con la opción "siguiente", seleccionamos la opción de 32-bit files o 64-bit files dependiendo de las propiedades de nuestro dispositivo. 
+
+#![Desviacion](images/instalacion/p2.PNG)
+
+PASO 3: Una vez seleccionado, continuamos dando en la opción "siguiente" dando como apertura a la finalización de la intalación.
+
+#![Desviacion](images/instalacion/p3.PNG)
+
+### Instalación R Studio
+1. Para instalar RStudio entraremos al siguiente link: https://www.rstudio.com/products/rstudio/download/,En esta página se muestran los diferentes servicios por la misma versión de R, para nuestro caso elegiremos la primera opción “RStudio Desktop”
+
+#![Desviacion](images/instalacion/p4.PNG)
+
+2. De la misma manera que hicimos para R, aquí seleccionaremos nuestro sistema operativo:
+
+#![Desviacion](images/instalacion/p5.PNG)
+
+Una vez seleccionado, continuamos dando en la opción "siguiente" dando como apertura a la finalización de la intalación.
 
 ### Paquetes R
+
+Es importante saber cómo instalar paquetes en R, ya que en ocaciones para realizar una acción en este sistema se necesita de un paquete en específico que contenga la operación que necesitamos realizar.
+
+Para instalar un paquete existen 2 maneras:
+
+1.	Por consola: Para realizar esta acción en la consola deberemos escribir el siguiente comando “install.packages(“nombre del paquete”).
+2.	La segunda manera se realiza dando clic en “Tools” y seguido “Install Packages” como se ve en la siguiente imagen.
+
+#![Desviacion](images/instalacion/pack1.PNG)
+
+Acto seguido nos aparecerá una interfaz en donde podemos escribir el paquete que deseemos instalar.
+
+#![Desviacion](images/instalacion/pack2.PNG)
+
+Rstudio presenta una ayuda para saber cómo funcionan los diferentes paquetes que existen y como pueden ser usados. Para ello, se puede ingresar a la siguiente opcion:
+
+#![Desviacion](images/instalacion/pack3.PNG)
+
 
 ## Gráficas
 
 ### Definición 
+
+Un gráfico Excel es una representación gráfica de ciertos valores que nos permite hacer una comprobación comparativa de manera visual. Los gráficos en Excel son una de las herramientas más
+potentes que nos ofrece Microsoft para hacer informes, análisis de datos.
+El objetivo a conseguir con los gráficos de Excel será conseguir que la información mostrada se
+entienda mejor que los números en sí mismos.
 
 ## Tablas
 
@@ -168,6 +225,7 @@ Para hallar la media geométrica de una manera sencilla en R, debemos hacer el p
 datos <-c(1,5,4,8,9,10,12,15,16,17)
 prod(datos)^(1/10)
 ```
+
 ## Moda
 
 La moda, es otra forma de describir el valor central de un conjunto de datos, ésta se calcula como el valor más frecuente. 
@@ -339,4 +397,20 @@ Para calcular la  P(Z>150) de una Normal de media 125 y la desviación  estánda
 
 ```{r}
 pnorm(150, mean = 125, sd = 50, lower.tail = F)
+```
+
+### Asimetría y Curtosís 
+Esta función caracteriza el grado de asimetría de una distribución con respecto a su media. La
+asimetría positiva indica una distribución unilateral que se extiende hacia valores más positivos. La
+asimetría negativa indica una distribución unilateral que se extiende hacia valores más negativos.
+
+Formula:
+
+#![Desviacion](images/asimetria.PNG)
+
+```{r}
+library(moments)
+x<- c(16, 32, 17, 22, 8, 21, 46, 29, 52, 79, 44)
+skewness(x)
+kurtosis(x)
 ```
