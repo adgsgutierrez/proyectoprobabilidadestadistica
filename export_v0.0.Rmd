@@ -17,18 +17,20 @@ En esta sección encontrarás todos los conceptos necesarios para iniciar a trab
 
 ## Gráficas
 
-### Gráficos de pie 
+### Definición 
 
-### Gráfico columna apilada 
+### Tablas
 
-### Gráfico barra apilada
+### Tablas de frecuencia 
 
-### Gráfico columna agrupada 
+### Tablas dinámicas
 
-### Gráfico de barra agrupada
+### Gráfico de pie
 
-### Gráfico de puntos 
+### Gráfico de barras
 
 ### Gráfico de lineas
 
 ### Gráfico pareto
+
+### Gráfico de Box Plot
