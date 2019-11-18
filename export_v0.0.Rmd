@@ -90,9 +90,14 @@ library(prob)
  barplot(table,legend=TRUE,horiz=TRUE)
 ```
 ### Gráfico de lineas
-
+```{r}
+numeroMascotas<-c(5,1,1,2,3,3,4,5,5,6,7)
+edadPersonas <- c(12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22)
+plot(edadPersonas, numeroMascotas, main = "Mascotas según la edad", type = "l")
+```
 ### Gráfico pareto
-
+Un gráfico de Pareto, llamado así por Vilfredo Pareto, es un tipo de gráfico que contiene barras y un gráfico de líneas, donde los valores individuales se representan en orden descendente por barras, y el total acumulado se representa por la línea.
+Para realizar este tipo de gráficas en R, es necesatio instalar el paquete qcc.
 ```{r}
 library(qcc)
 defect <- c(80, 27, 66, 94, 33)
