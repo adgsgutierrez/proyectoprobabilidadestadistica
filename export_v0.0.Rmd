@@ -27,6 +27,15 @@ En esta sección encontrarás todos los conceptos necesarios para iniciar a trab
 ### Tablas dinámicas
 
 ### Gráfico de pie
+Un gráfico de pie es aquel cuya división proporcional busca representar la distribución de categorías dentro de una variable nominal u ordinal: el área del círculo representa el 100% de los casos de una variable, mientras que el área de cada división del círculo, representa el porcentaje de casos en una categoría específica de esa variable (Ritchey 2008, 80–83)
+```{r}
+Países <- c(10,12,4,16,8)
+lbls <-c('UK', 'US','Australia', 'Alemania','Colombia')
+pct <- round(Países/sum(Países)*100)
+lbls <- paste(lbls,pct)
+lbls <- paste(lbls,"%", sep = "")
+pie(Países,labels = lbls,main = "Sobrepoblación")
+```
 
 ### Gráfico de barras
 En un gráfico de barras se pueden trazar datos que se organizan en columnas o filas de una hoja de
@@ -44,5 +53,16 @@ library(prob)
 ### Gráfico de lineas
 
 ### Gráfico pareto
+
+```{r}
+library(qcc)
+defect <- c(80, 27, 66, 94, 33)
+names(defect) <- c("price code", "schedule date", "supplier code", "contact num.", "part num.")
+pareto.chart(defect, ylab = "Error frequency")
+pareto.chart(defect, ylab = "Error frequency", xlab = "Error causes", las=1)
+pareto.chart(defect, ylab = "Error frequency", col=rainbow(length(defect)))
+pareto.chart(defect, cumperc = seq(0, 100, by = 5), ylab2 = "A finer tickmarks grid")
+
+```
 
 ### Gráfico de Box Plot
