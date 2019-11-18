@@ -28,7 +28,18 @@ En esta sección encontrarás todos los conceptos necesarios para iniciar a trab
 ### Gráfico de pie
 
 ### Gráfico de barras
-
+En un gráfico de barras se pueden trazar datos que se organizan en columnas o filas de una hoja de
+cálculo. Este tipo de gráfico muestra comparaciones entre elementos individuales. En un gráfico de
+barras, las categorías se organizan típicamente a lo largo del eje vertical y los valores a lo largo del
+eje horizontal.
+```{r}
+library(prob)
+ table=matrix(c(55,110,90,50,39,40),ncol=3,byrow=TRUE)
+ rownames(table)=c('viejo','joven')
+ colnames(table)=c("bajo","medio","alto")
+ table
+ barplot(table,legend=TRUE,horiz=TRUE)
+```
 ### Gráfico de lineas
 
 ### Gráfico pareto
