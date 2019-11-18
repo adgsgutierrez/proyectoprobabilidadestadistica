@@ -1754,80 +1754,43 @@ summary {
 <p>Enrique Suarez 506161049</p>
 <p>Aric Gutierrez 506162030</p>
 <p>En esta sección encontrarás todos los conceptos necesarios para iniciar a trabajar con herramientas enfocadas al desarrollo de la probabilidad y la estadística.</p>
-<p>======= ## Recursos Necesarios</p>
 </div>
-<div id="paquete-prob" class="section level3">
-<h3>Paquete prob</h3>
-<p>Para instalar use la instrucción install.packages(“prob”) y para cargar la libreria library(prob). Esta librería, sirve para trabajar los siguientes apartados.</p>
+<div id="instalación-de-r" class="section level3">
+<h3>Instalación de R</h3>
 </div>
-<div id="conceptos-básicos" class="section level2">
-<h2>Conceptos Básicos</h2>
-<div id="unión" class="section level3">
-<h3>Unión</h3>
-<p>Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.</p>
-<p>Con el método union(A,B), realizaremos la unión de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico. Por medio de la función subset(x,…), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.</p>
+<div id="paquetes-r" class="section level3">
+<h3>Paquetes R</h3>
+</div>
+<div id="gráficas" class="section level2">
+<h2>Gráficas</h2>
+<div id="gráficos-de-pie" class="section level3">
+<h3>Gráficos de pie</h3>
+</div>
+<div id="gráfico-columna-apilada" class="section level3">
+<h3>Gráfico columna apilada</h3>
+</div>
+<div id="gráfico-barra-apilada" class="section level3">
+<h3>Gráfico barra apilada</h3>
+</div>
+<div id="gráfico-columna-agrupada" class="section level3">
+<h3>Gráfico columna agrupada</h3>
+</div>
+<div id="gráfico-de-barra-agrupada" class="section level3">
+<h3>Gráfico de barra agrupada</h3>
+</div>
+<div id="gráfico-de-puntos" class="section level3">
+<h3>Gráfico de puntos</h3>
+</div>
+<div id="gráfico-de-lineas" class="section level3">
+<h3>Gráfico de lineas</h3>
+</div>
+<div id="gráfico-pareto" class="section level3">
+<h3>Gráfico pareto</h3>
 <!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcblxuXG5cbkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gXCJBXCIgKSAjI1NvbG8gbG9zIHF1ZSBzb24gYXNlc1xuQlxuXG5cbnVuaW9uKEEsQilcbmBgYCJ9 -->
-<pre class="r"><code>library(prob)
-S &lt;- cards()
-A &lt;- subset(S, suit == &quot;Heart&quot;)##Evento de solo corazones
-A 
-
-
-
-B &lt;- subset(S, rank == &quot;A&quot; ) ##Solo los que son ases
-B
-
-
-union(A,B)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-<div id="intersección" class="section level3">
-<h3>Intersección</h3>
-<p>Para el ejemplo, se usará un data frame de ejemplo que viene dentro del paquete prob llamado cards.</p>
-<p>Con el método intersect(A,B), realizaremos la intersección de los dos conjuntos. Siendo A, y B subconjuntos de un espacio probabilístico. Por medio de la función subset(x,…), obtenemos un subconjunto de valores del conjunto x, que cumple con ciertas condiciones, estas dadas en los parametros siguientes a x.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUyA8LSBjYXJkcygpXG5BIDwtIHN1YnNldChTLCBzdWl0ID09IFwiSGVhcnRcIikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lc1xuQSBcblxuXG5cbkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gXCJBXCIgKSAjI1NvbG8gbG9zIHF1ZSBzb24gYXNlc1xuQlxuXG5cbmludGVyc2VjdChBLEIpXG5gYGAifQ== -->
-<pre class="r"><code>library(prob)
-S &lt;- cards()
-A &lt;- subset(S, suit == &quot;Heart&quot;)##Evento de solo corazones
-A 
-
-
-
-B &lt;- subset(S, rank == &quot;A&quot; ) ##Solo los que son ases
-B
-
-
-intersect(A,B)</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
-<!-- rnb-text-begin -->
-</div>
-</div>
-<div id="probabilidad" class="section level2">
-<h2>Probabilidad</h2>
-<div id="espacio-muestral-discreto" class="section level3">
-<h3>Espacio muestral discreto</h3>
-<p>Para calcular la probabilidad de un evento en R, es posible usar el paquete prob. Para el ejemplo, se usará un espacio muestral de ejemplo: tosscoin(n) devuelve el espacio muestral de lanzar n monedas repetídamente. Además, calcularemos la probabilidad de obtener una cara de la tirada de las dos monedas. Para esto, usaremos el operador xor, la operación nrow() para obtener la cantidad de filas de cada conjunto.</p>
-<!-- rnb-text-end -->
-<!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuUzwtdG9zc2NvaW4oMilcbkE8LXN1YnNldChTLHhvcih0b3NzMT09XCJIXCIsdG9zczI9PVwiSFwiKSlcblBBPC1ucm93KEEpL25yb3coUylcblBBXG5gYGAifQ== -->
-<pre class="r"><code>library(prob)
-S&lt;-tosscoin(2)
-A&lt;-subset(S,xor(toss1==&quot;H&quot;,toss2==&quot;H&quot;))
-PA&lt;-nrow(A)/nrow(S)
-PA</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-chunk-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiTWFudWFsIGRlIFByb2JhYmlsw61zdGljbyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoKIyMjIFBhcnRpY2lwYW50ZXMKCkVucmlxdWUgU3VhcmV6ICA1MDYxNjEwNDkKCkFyaWMgR3V0aWVycmV6ICA1MDYxNjIwMzAKCkVuIGVzdGEgc2VjY2nDs24gZW5jb250cmFyw6FzIHRvZG9zIGxvcyBjb25jZXB0b3MgbmVjZXNhcmlvcyBwYXJhIGluaWNpYXIgYSB0cmFiYWphciBjb24gaGVycmFtaWVudGFzIGVuZm9jYWRhcyBhbCBkZXNhcnJvbGxvIGRlIGxhIHByb2JhYmlsaWRhZCB5IGxhIGVzdGFkw61zdGljYS4KCgo9PT09PT09CiMjIFJlY3Vyc29zIE5lY2VzYXJpb3MKCiMjIyBQYXF1ZXRlIHByb2IKClBhcmEgaW5zdGFsYXIgdXNlIGxhIGluc3RydWNjacOzbiBpbnN0YWxsLnBhY2thZ2VzKCJwcm9iIikgeSBwYXJhIGNhcmdhciBsYSBsaWJyZXJpYSBsaWJyYXJ5KHByb2IpLiBFc3RhIGxpYnJlcsOtYSwgc2lydmUgcGFyYSB0cmFiYWphciBsb3Mgc2lndWllbnRlcyBhcGFydGFkb3MuCgoKIyMgQ29uY2VwdG9zIELDoXNpY29zCgojIyMgVW5pw7NuCgpQYXJhIGVsIGVqZW1wbG8sIHNlIHVzYXLDoSB1biBkYXRhIGZyYW1lIGRlIGVqZW1wbG8gcXVlIHZpZW5lIGRlbnRybyBkZWwgcGFxdWV0ZSBwcm9iIGxsYW1hZG8gY2FyZHMuCgpDb24gZWwgbcOpdG9kbyB1bmlvbihBLEIpLCByZWFsaXphcmVtb3MgbGEgdW5pw7NuIGRlIGxvcyBkb3MgY29uanVudG9zLiBTaWVuZG8gQSwgeSBCIHN1YmNvbmp1bnRvcyBkZSB1biBlc3BhY2lvIHByb2JhYmlsw61zdGljby4KUG9yIG1lZGlvIGRlIGxhIGZ1bmNpw7NuIHN1YnNldCh4LC4uLiksIG9idGVuZW1vcyB1biBzdWJjb25qdW50byBkZSB2YWxvcmVzIGRlbCBjb25qdW50byB4LCBxdWUgY3VtcGxlIGNvbiBjaWVydGFzIGNvbmRpY2lvbmVzLCBlc3RhcyBkYWRhcyBlbiBsb3MgcGFyYW1ldHJvcyBzaWd1aWVudGVzIGEgeC4KYGBge3J9CmxpYnJhcnkocHJvYikKUyA8LSBjYXJkcygpCkEgPC0gc3Vic2V0KFMsIHN1aXQgPT0gIkhlYXJ0IikjI0V2ZW50byBkZSBzb2xvIGNvcmF6b25lcwpBIAoKCgpCIDwtIHN1YnNldChTLCByYW5rID09ICJBIiApICMjU29sbyBsb3MgcXVlIHNvbiBhc2VzCkIKCgp1bmlvbihBLEIpCmBgYAoKIyMjIEludGVyc2VjY2nDs24KClBhcmEgZWwgZWplbXBsbywgc2UgdXNhcsOhIHVuIGRhdGEgZnJhbWUgZGUgZWplbXBsbyBxdWUgdmllbmUgZGVudHJvIGRlbCBwYXF1ZXRlIHByb2IgbGxhbWFkbyBjYXJkcy4KCkNvbiBlbCBtw6l0b2RvIGludGVyc2VjdChBLEIpLCByZWFsaXphcmVtb3MgbGEgaW50ZXJzZWNjacOzbiBkZSBsb3MgZG9zIGNvbmp1bnRvcy4gU2llbmRvIEEsIHkgQiBzdWJjb25qdW50b3MgZGUgdW4gZXNwYWNpbyBwcm9iYWJpbMOtc3RpY28uClBvciBtZWRpbyBkZSBsYSBmdW5jacOzbiBzdWJzZXQoeCwuLi4pLCBvYnRlbmVtb3MgdW4gc3ViY29uanVudG8gZGUgdmFsb3JlcyBkZWwgY29uanVudG8geCwgcXVlIGN1bXBsZSBjb24gY2llcnRhcyBjb25kaWNpb25lcywgZXN0YXMgZGFkYXMgZW4gbG9zIHBhcmFtZXRyb3Mgc2lndWllbnRlcyBhIHguCgpgYGB7cn0KbGlicmFyeShwcm9iKQpTIDwtIGNhcmRzKCkKQSA8LSBzdWJzZXQoUywgc3VpdCA9PSAiSGVhcnQiKSMjRXZlbnRvIGRlIHNvbG8gY29yYXpvbmVzCkEgCgoKCkIgPC0gc3Vic2V0KFMsIHJhbmsgPT0gIkEiICkgIyNTb2xvIGxvcyBxdWUgc29uIGFzZXMKQgoKCmludGVyc2VjdChBLEIpCmBgYAoKCgojIyBQcm9iYWJpbGlkYWQKCgojIyMgRXNwYWNpbyBtdWVzdHJhbCBkaXNjcmV0bwoKUGFyYSBjYWxjdWxhciBsYSBwcm9iYWJpbGlkYWQgZGUgdW4gZXZlbnRvIGVuIFIsIGVzIHBvc2libGUgdXNhciBlbCBwYXF1ZXRlIHByb2IuIApQYXJhIGVsIGVqZW1wbG8sIHNlIHVzYXLDoSB1biBlc3BhY2lvIG11ZXN0cmFsIGRlIGVqZW1wbG86IHRvc3Njb2luKG4pIGRldnVlbHZlIGVsIGVzcGFjaW8gbXVlc3RyYWwgZGUgbGFuemFyIG4gbW9uZWRhcyByZXBldMOtZGFtZW50ZS4gQWRlbcOhcywgY2FsY3VsYXJlbW9zIGxhIHByb2JhYmlsaWRhZCBkZSBvYnRlbmVyIHVuYSBjYXJhIGRlIGxhIHRpcmFkYSBkZSBsYXMgZG9zIG1vbmVkYXMuIFBhcmEgZXN0bywgdXNhcmVtb3MgZWwgb3BlcmFkb3IgeG9yLCBsYSBvcGVyYWNpw7NuIG5yb3coKSBwYXJhIG9idGVuZXIgbGEgY2FudGlkYWQgZGUgZmlsYXMgZGUgY2FkYSBjb25qdW50by4KYGBge3J9CmxpYnJhcnkocHJvYikKUzwtdG9zc2NvaW4oMikKQTwtc3Vic2V0KFMseG9yKHRvc3MxPT0iSCIsdG9zczI9PSJIIikpClBBPC1ucm93KEEpL25yb3coUykKUEEKYGBgCg==</div>
+<div id="rmd-source-code">Ci0tLQp0aXRsZTogIk1hbnVhbCBkZSBQcm9iYWJpbMOtc3RpY28iCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIyBQYXJ0aWNpcGFudGVzCgpFbnJpcXVlIFN1YXJleiAgNTA2MTYxMDQ5CgpBcmljIEd1dGllcnJleiAgNTA2MTYyMDMwCgpFbiBlc3RhIHNlY2Npw7NuIGVuY29udHJhcsOhcyB0b2RvcyBsb3MgY29uY2VwdG9zIG5lY2VzYXJpb3MgcGFyYSBpbmljaWFyIGEgdHJhYmFqYXIgY29uIGhlcnJhbWllbnRhcyBlbmZvY2FkYXMgYWwgZGVzYXJyb2xsbyBkZSBsYSBwcm9iYWJpbGlkYWQgeSBsYSBlc3RhZMOtc3RpY2EuCgojIyMgSW5zdGFsYWNpw7NuIGRlIFIKCiMjIyBQYXF1ZXRlcyBSCgojIyBHcsOhZmljYXMKCiMjIyBHcsOhZmljb3MgZGUgcGllIAoKIyMjIEdyw6FmaWNvIGNvbHVtbmEgYXBpbGFkYSAKCiMjIyBHcsOhZmljbyBiYXJyYSBhcGlsYWRhCgojIyMgR3LDoWZpY28gY29sdW1uYSBhZ3J1cGFkYSAKCiMjIyBHcsOhZmljbyBkZSBiYXJyYSBhZ3J1cGFkYQoKIyMjIEdyw6FmaWNvIGRlIHB1bnRvcyAKCiMjIyBHcsOhZmljbyBkZSBsaW5lYXMKCiMjIyBHcsOhZmljbyBwYXJldG8K</div>
 
 
 
