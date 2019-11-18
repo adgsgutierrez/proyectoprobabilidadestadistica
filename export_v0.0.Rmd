@@ -1,3 +1,4 @@
+
 ---
 title: "Manual de Probabilístico"
 output: html_notebook
@@ -65,6 +66,15 @@ rpivotTable(data, rows="gene", col="condition", aggregatorName="Average", vals="
 
 ```
 ### Gráfico de pie
+Un gráfico de pie es aquel cuya división proporcional busca representar la distribución de categorías dentro de una variable nominal u ordinal: el área del círculo representa el 100% de los casos de una variable, mientras que el área de cada división del círculo, representa el porcentaje de casos en una categoría específica de esa variable (Ritchey 2008, 80–83)
+```{r}
+Países <- c(10,12,4,16,8)
+lbls <-c('UK', 'US','Australia', 'Alemania','Colombia')
+pct <- round(Países/sum(Países)*100)
+lbls <- paste(lbls,pct)
+lbls <- paste(lbls,"%", sep = "")
+pie(Países,labels = lbls,main = "Sobrepoblación")
+```
 
 ### Gráfico de barras
 En un gráfico de barras se pueden trazar datos que se organizan en columnas o filas de una hoja de
@@ -80,8 +90,24 @@ library(prob)
  barplot(table,legend=TRUE,horiz=TRUE)
 ```
 ### Gráfico de lineas
-
+```{r}
+numeroMascotas<-c(5,1,1,2,3,3,4,5,5,6,7)
+edadPersonas <- c(12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22)
+plot(edadPersonas, numeroMascotas, main = "Mascotas según la edad", type = "l")
+```
 ### Gráfico pareto
+Un gráfico de Pareto, llamado así por Vilfredo Pareto, es un tipo de gráfico que contiene barras y un gráfico de líneas, donde los valores individuales se representan en orden descendente por barras, y el total acumulado se representa por la línea.
+Para realizar este tipo de gráficas en R, es necesatio instalar el paquete qcc.
+```{r}
+library(qcc)
+defect <- c(80, 27, 66, 94, 33)
+names(defect) <- c("price code", "schedule date", "supplier code", "contact num.", "part num.")
+pareto.chart(defect, ylab = "Error frequency")
+pareto.chart(defect, ylab = "Error frequency", xlab = "Error causes", las=1)
+pareto.chart(defect, ylab = "Error frequency", col=rainbow(length(defect)))
+pareto.chart(defect, cumperc = seq(0, 100, by = 5), ylab2 = "A finer tickmarks grid")
+
+```
 
 ### Gráfico de Box Plot
 Un diagrama de cajas y bigotes es una manera conveniente de mostrar visualmente grupos de datos
@@ -98,4 +124,219 @@ boxplot(Hijos,main="Hijos Empresa",col="green",ylabel="Hijos",boder="orange")
 ```
 
 
+### Estadística Descriptiva
 
+La estad ́ıstica descriptiva es una parte importante de la Estad ́ıstica que se dedica a analizar y representarlos datos. Su finalidad es obtener informaci ́on, analizarla, elaborarla y simplificarla lo necesario para que puedaser interpretada c ́omoda y r ́apidamente y, por tanto, pueda utilizarse eficazmente para el fin que se desee. A continuación, mostraremos como obtener algunas de estas medidas descriptivas en Rstudio.
+
+## La media
+
+Devuelve el promedio (media aritmética) de los argumentos.
+
+#![Media](images/media.png)
+
+En Rstudio existe la función mean(), el cual se utiliza para sacar directamente la media.
+
+Para realizar la media debemos declarar un vector en R con los datos de nuestro interés, en  nuestro caso será el siguiente:
+datos <-c(1,5,4,8,9,10,12,15,16,17):
+Luego, ejecutamos el mean de nuestro vector y obtendremos el promedio de  nuestros datos que sería:
+```{r}
+datos <-c(1,5,4,8,9,10,12,15,16,17)
+mean(datos)
+```
+
+## Mediana
+
+Este concepto, se define  como el valor en el medio cuando los datos son ordenados de menor a mayor. En RStudio existe la función median(), la cual se utiliza para obtener directamente la mediana:
+
+```{r}
+hijos <-c(1,4,3,2,5,2,6,2,7,3)
+median(hijos)
+```
+
+## Media Geométrica
+
+La media geométrica es otra forma de describir el valor central de un conjunto de datos, se define como:
+
+#![MediaG](images/mediag.png)
+
+Para realizar la Media geométrica  en R debemos tener un conjunto de datos que tienen que ser estrictamente positivos y mayores a 0  que en nuestro caso será el siguiente:
+
+datos <-c(1,5,4,8,9,10,12,15,16,17)
+
+Para hallar la media geométrica de una manera sencilla en R, debemos hacer el producto de todos nuestros datos y elevar el resultado a 1/n en donde n es el número de datos:
+```{r}
+datos <-c(1,5,4,8,9,10,12,15,16,17)
+prod(datos)^(1/10)
+```
+## Moda
+
+La moda, es otra forma de describir el valor central de un conjunto de datos, ésta se calcula como el valor más frecuente. 
+
+1. Se crea una función llamada moda.
+
+2. Creamos nuestro vector con los datos deseados:
+
+hijos <-c(1,4,3,2,5,2,6,2,7,3)
+
+```{r}
+moda=function(x) {
+	q=table(x)
+	q=sort(q,TRUE)
+	return(q[1])
+ 	}
+
+hijos <-c(1,4,3,2,5,2,6,2,7,3)
+moda(hijos)
+```
+
+## Máximo
+
+Es el mayor valor que puede tomar una distribución. En RStudio existe la función max(), para calcular dicho valor.
+
+```{r}
+datos <-c(1,5,4,8,9,10,12,15,16,17)
+max(datos)
+```
+
+## Mínimo
+
+Es el menor valor que puede tomar una distribución. En RStudio existe la función min(), para calcular dicho valor.
+
+
+```{r}
+datos <-c(1,5,4,8,9,10,12,15,16,17)
+min(datos)
+```
+
+## Varianza
+
+La varianza es una de las medidas de dispersión más populares, la siguiente ecuación define la varianza de un conjunto de datos:
+
+#![Varianza](images/varianza.png)
+
+En RStudio, existe la función var(), para calcular la varianza.
+
+```{r}
+hijos <-c(1,4,3,2,5,2,6,2,7,3)
+var(hijos)
+```
+
+## Desviación estándar
+
+Es una medida que se utiliza para cuantificar la cantidad de variación o dispersión de un conjunto de valores de datos.
+Para hallar la desviación estándar  simplemente usamos la función sd() y creamos un vector con los datos deseados:
+
+#![Desviacion](images/desv.png)
+
+```{r}
+hijos <-c(1,4,3,2,5,2,6,2,7,3)
+sd(hijos)
+```
+
+## Cuartiles 
+
+Son los tres valores de la variable que dividen a un conjunto de datos ordenados en cuatro partes iguales.
+Para obtener los cuartiles de los datos que deseemos debemos utilizar la función quantile() en nuestro caso vamos a realizar el siguiente procedimiento:
+
+```{r}
+hijos <-c(1,4,3,2,5,2,6,2,7,3)
+quantile(hijos)
+```
+
+
+
+## Distribución de Poisson
+
+La  distribución  de  Poisson  es  una  distribución  de  probabilidad  discreta.  Expresa  la  probabilidad  de  un número k de eventos ocurriendo en un tiempo fijo si estos eventos ocurren con una frecuencia media conociday son independientes del tiempo discurrido desde el  ́ultimo evento.
+
+Por ejemplo, para calcular la  P(X = 1) de una Poisson(3)
+
+```{r}
+dpois(1,3)
+```
+## Distribución binomial
+
+La distribución binomial es una distribución de probabilidad discreta que mide el número de  ́exitos en una secuencia de n ensayos independientes de Bernoulli con una probabilidad fija p de ocurrencia del  ́exito entre los  ensayo.
+
+Por ejemplo:
+Para calcular la P(X=3) de una Binomial(10,0.5)
+```{r}
+dbinom(3, 10, 0.5)
+```
+
+Para calcular la P(X=6) de una Binomial(10,0.5)
+
+```{r}
+dbinom(6, 10, 0.5)
+```
+
+Para calcular la P(X=2,1,0) de una Binomial(10,0.5)
+
+```{r}
+dbinom(c(2, 1, 0), 10, 0.5)
+```
+
+
+Para calcular la P(X=2,1,0) de una Binomial(10,0.5)
+
+```{r}
+dpois(1,3)
+```
+
+Para calcular la P(X<=2) de una Binomial(10,0.5)
+```{r}
+sum(dbinom(c(2, 1, 0), 10, 0.5))
+```
+
+Para calcular la P(X>2) de una Binomial(10,0.5)
+```{r}
+pbinom(2,10,0.5, lower.tail=F)
+```
+
+```{r}
+dpois(1,3)
+```
+
+
+
+## Distribución normal
+
+La distribución normal, es una de las distribuciones de probabilidad de variable continua que con más frecuencia aparece en estadistica y tambien en la teoria de probabilidades. Para realizar la distribución normal en R, debemos tener en cuenta:
+
+-Al hallar una probabilidad en x exacta, se debe utilizar la función dnorm().
+-Al hallar una probabilidad en x<=, se debe utilizar la función pbinom().
+-Al hallar una probabilidad en x>=, se utilizará y activará la opción lower.tail y se colocará en FALSE, asi tendriamos el x>=pbinom(lower.tail=FALSE)
+
+
+Por ejemplo: 
+
+Para calcular la  P(Z>1) de una N(0,1)
+```{r}
+pnorm(1, mean = 0, sd = 1, lower.tail = F)
+```
+
+
+Para calcular la  P(-2<Z<2) de una N(0,1)
+```{r}
+pnorm(c(2), mean = 0, sd = 1) - pnorm(c(-2), mean = 0, sd = 1)
+```
+
+
+Para calcular la  P(0<Z<1.96) de una N(0,1)
+```{r}
+pnorm(1.96, mean = 0, sd = 1) - pnorm(0, mean = 0, sd = 1)
+```
+
+
+Para calcular la  P(Z<=z)=0,5793 de una N(0,1)
+
+```{r}
+qnorm(0.5793, mean = 0, sd = 1)
+```
+
+  
+Para calcular la  P(Z>150) de una Normal de media 125 y la desviación  estándar 50.
+
+```{r}
+pnorm(150, mean = 125, sd = 50, lower.tail = F)
+```
