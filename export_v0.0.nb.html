@@ -1763,34 +1763,50 @@ summary {
 </div>
 <div id="gráficas" class="section level2">
 <h2>Gráficas</h2>
-<div id="gráficos-de-pie" class="section level3">
-<h3>Gráficos de pie</h3>
+<div id="definición" class="section level3">
+<h3>Definición</h3>
 </div>
-<div id="gráfico-columna-apilada" class="section level3">
-<h3>Gráfico columna apilada</h3>
+<div id="tablas" class="section level3">
+<h3>Tablas</h3>
 </div>
-<div id="gráfico-barra-apilada" class="section level3">
-<h3>Gráfico barra apilada</h3>
+<div id="tablas-de-frecuencia" class="section level3">
+<h3>Tablas de frecuencia</h3>
 </div>
-<div id="gráfico-columna-agrupada" class="section level3">
-<h3>Gráfico columna agrupada</h3>
+<div id="tablas-dinámicas" class="section level3">
+<h3>Tablas dinámicas</h3>
 </div>
-<div id="gráfico-de-barra-agrupada" class="section level3">
-<h3>Gráfico de barra agrupada</h3>
+<div id="gráfico-de-pie" class="section level3">
+<h3>Gráfico de pie</h3>
 </div>
-<div id="gráfico-de-puntos" class="section level3">
-<h3>Gráfico de puntos</h3>
+<div id="gráfico-de-barras" class="section level3">
+<h3>Gráfico de barras</h3>
+<p>En un gráfico de barras se pueden trazar datos que se organizan en columnas o filas de una hoja de cálculo. Este tipo de gráfico muestra comparaciones entre elementos individuales. En un gráfico de barras, las categorías se organizan típicamente a lo largo del eje vertical y los valores a lo largo del eje horizontal.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShwcm9iKVxuIHRhYmxlPW1hdHJpeChjKDU1LDExMCw5MCw1MCwzOSw0MCksbmNvbD0zLGJ5cm93PVRSVUUpXG4gcm93bmFtZXModGFibGUpPWMoJ3ZpZWpvJywnam92ZW4nKVxuIGNvbG5hbWVzKHRhYmxlKT1jKFwiYmFqb1wiLFwibWVkaW9cIixcImFsdG9cIilcbiB0YWJsZVxuIGJhcnBsb3QodGFibGUsbGVnZW5kPVRSVUUsaG9yaXo9VFJVRSlcbmBgYCJ9 -->
+<pre class="r"><code>library(prob)
+ table=matrix(c(55,110,90,50,39,40),ncol=3,byrow=TRUE)
+ rownames(table)=c('viejo','joven')
+ colnames(table)=c(&quot;bajo&quot;,&quot;medio&quot;,&quot;alto&quot;)
+ table
+ barplot(table,legend=TRUE,horiz=TRUE)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 </div>
 <div id="gráfico-de-lineas" class="section level3">
 <h3>Gráfico de lineas</h3>
 </div>
 <div id="gráfico-pareto" class="section level3">
 <h3>Gráfico pareto</h3>
+</div>
+<div id="gráfico-de-box-plot" class="section level3">
+<h3>Gráfico de Box Plot</h3>
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">Ci0tLQp0aXRsZTogIk1hbnVhbCBkZSBQcm9iYWJpbMOtc3RpY28iCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIyBQYXJ0aWNpcGFudGVzCgpFbnJpcXVlIFN1YXJleiAgNTA2MTYxMDQ5CgpBcmljIEd1dGllcnJleiAgNTA2MTYyMDMwCgpFbiBlc3RhIHNlY2Npw7NuIGVuY29udHJhcsOhcyB0b2RvcyBsb3MgY29uY2VwdG9zIG5lY2VzYXJpb3MgcGFyYSBpbmljaWFyIGEgdHJhYmFqYXIgY29uIGhlcnJhbWllbnRhcyBlbmZvY2FkYXMgYWwgZGVzYXJyb2xsbyBkZSBsYSBwcm9iYWJpbGlkYWQgeSBsYSBlc3RhZMOtc3RpY2EuCgojIyMgSW5zdGFsYWNpw7NuIGRlIFIKCiMjIyBQYXF1ZXRlcyBSCgojIyBHcsOhZmljYXMKCiMjIyBHcsOhZmljb3MgZGUgcGllIAoKIyMjIEdyw6FmaWNvIGNvbHVtbmEgYXBpbGFkYSAKCiMjIyBHcsOhZmljbyBiYXJyYSBhcGlsYWRhCgojIyMgR3LDoWZpY28gY29sdW1uYSBhZ3J1cGFkYSAKCiMjIyBHcsOhZmljbyBkZSBiYXJyYSBhZ3J1cGFkYQoKIyMjIEdyw6FmaWNvIGRlIHB1bnRvcyAKCiMjIyBHcsOhZmljbyBkZSBsaW5lYXMKCiMjIyBHcsOhZmljbyBwYXJldG8K</div>
+<div id="rmd-source-code">Ci0tLQp0aXRsZTogIk1hbnVhbCBkZSBQcm9iYWJpbMOtc3RpY28iCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCiMjIyBQYXJ0aWNpcGFudGVzCgpFbnJpcXVlIFN1YXJleiAgNTA2MTYxMDQ5CgpBcmljIEd1dGllcnJleiAgNTA2MTYyMDMwCgpFbiBlc3RhIHNlY2Npw7NuIGVuY29udHJhcsOhcyB0b2RvcyBsb3MgY29uY2VwdG9zIG5lY2VzYXJpb3MgcGFyYSBpbmljaWFyIGEgdHJhYmFqYXIgY29uIGhlcnJhbWllbnRhcyBlbmZvY2FkYXMgYWwgZGVzYXJyb2xsbyBkZSBsYSBwcm9iYWJpbGlkYWQgeSBsYSBlc3RhZMOtc3RpY2EuCgojIyMgSW5zdGFsYWNpw7NuIGRlIFIKCiMjIyBQYXF1ZXRlcyBSCgojIyBHcsOhZmljYXMKCiMjIyBEZWZpbmljacOzbiAKCiMjIyBUYWJsYXMKCiMjIyBUYWJsYXMgZGUgZnJlY3VlbmNpYSAKCiMjIyBUYWJsYXMgZGluw6FtaWNhcwoKIyMjIEdyw6FmaWNvIGRlIHBpZQoKIyMjIEdyw6FmaWNvIGRlIGJhcnJhcwpFbiB1biBncsOhZmljbyBkZSBiYXJyYXMgc2UgcHVlZGVuIHRyYXphciBkYXRvcyBxdWUgc2Ugb3JnYW5pemFuIGVuIGNvbHVtbmFzIG8gZmlsYXMgZGUgdW5hIGhvamEgZGUKY8OhbGN1bG8uIEVzdGUgdGlwbyBkZSBncsOhZmljbyBtdWVzdHJhIGNvbXBhcmFjaW9uZXMgZW50cmUgZWxlbWVudG9zIGluZGl2aWR1YWxlcy4gRW4gdW4gZ3LDoWZpY28gZGUKYmFycmFzLCBsYXMgY2F0ZWdvcsOtYXMgc2Ugb3JnYW5pemFuIHTDrXBpY2FtZW50ZSBhIGxvIGxhcmdvIGRlbCBlamUgdmVydGljYWwgeSBsb3MgdmFsb3JlcyBhIGxvIGxhcmdvIGRlbAplamUgaG9yaXpvbnRhbC4KYGBge3J9CmxpYnJhcnkocHJvYikKIHRhYmxlPW1hdHJpeChjKDU1LDExMCw5MCw1MCwzOSw0MCksbmNvbD0zLGJ5cm93PVRSVUUpCiByb3duYW1lcyh0YWJsZSk9Yygndmllam8nLCdqb3ZlbicpCiBjb2xuYW1lcyh0YWJsZSk9YygiYmFqbyIsIm1lZGlvIiwiYWx0byIpCiB0YWJsZQogYmFycGxvdCh0YWJsZSxsZWdlbmQ9VFJVRSxob3Jpej1UUlVFKQpgYGAKIyMjIEdyw6FmaWNvIGRlIGxpbmVhcwoKIyMjIEdyw6FmaWNvIHBhcmV0bwoKIyMjIEdyw6FmaWNvIGRlIEJveCBQbG90Cg==</div>
 
 
 
