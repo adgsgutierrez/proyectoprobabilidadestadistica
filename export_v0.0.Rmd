@@ -1,6 +1,6 @@
 
 ---
-title: "Manual de Probabilístico"
+title: "Manual de Probabilidad y Estadística"
 output: html_notebook
 ---
 
@@ -17,8 +17,6 @@ En esta sección encontrarás todos los conceptos necesarios para iniciar a trab
 ### Paquetes R
 
 ## Gráficas
-
-### Definición 
 
 ## Tablas
 
@@ -45,12 +43,11 @@ mytable
 (mytable)/margin.table(mytable)
 cumsum(mytable)
 cumsum(mytable)/margin.table(mytable)
-
-
 ```
 ### Tablas dinámicas
 Una herramienta práctica para realizar conteos o tablas de contingencia son las tablas dinámicas. Algunos programas de hojas de calculo permiten realizar tablas dinámicas de forma interactivas
 ```{r}
+
  genes = paste('MMP', sprintf("%04d",1:10), sep="")
  data = expand.grid(gene=genes, condition=c('copper', 'cheetos', 'beer', 'pizza'))
  data$value = rnorm(40)
@@ -63,7 +60,6 @@ library(rpivotTable)
 
 
 rpivotTable(data, rows="gene", col="condition", aggregatorName="Average", vals="value")
-
 ```
 ### Gráfico de pie
 Un gráfico de pie es aquel cuya división proporcional busca representar la distribución de categorías dentro de una variable nominal u ordinal: el área del círculo representa el 100% de los casos de una variable, mientras que el área de cada división del círculo, representa el porcentaje de casos en una categoría específica de esa variable (Ritchey 2008, 80–83)
@@ -339,4 +335,96 @@ Para calcular la  P(Z>150) de una Normal de media 125 y la desviación  estánda
 
 ```{r}
 pnorm(150, mean = 125, sd = 50, lower.tail = F)
+```
+
+## Curtósis y Asimetría- histograma
+
+Para este ejemplo, se simularán 10000 muestras de una distribución normal con media de 55, y desviación estándar de 4.5. Se obtendrá la curtósis y asímetria.
+```{r}
+ejemplo <- rnorm(n = 10000, mean = 55, sd = 4.5)
+
+#Skewness and Kurtosis
+library(moments)
+skewness(ejemplo)
+
+kurtosis(ejemplo)
+
+#Histogram
+library(ggplot2)
+datasim <- data.frame(ejemplo)
+ggplot(datasim, aes(x = ejemplo), binwidth = 2) + 
+       geom_histogram(aes(y = ..density..), fill = 'red', alpha = 0.5) + 
+       geom_density(colour = 'blue') + xlab(expression(bold('Muestras simuladas'))) + 
+       ylab(expression(bold('Density')))
+```
+
+
+
+### Intérvalo de confianza y prueba de hipótesis
+
+
+Para  efectuar  una  prueba  de  hipótesis  es  necesario  tener  un  interés específico en contrastar cierta  hipótesis y verificar los supuestos que la prueba requiera.  La prueba de hipótesis puede realizarse como se indica a continuación, donde previamente se verifica la normalidad de los datos.
+
+```{r}
+sobrevivencia<-c(207,381,411,673,534,294,697,344,418,554)
+shapiro.test(sobrevivencia)
+t.test(sobrevivencia, mu=400, alternative = "greater")
+```
+
+
+
+### ANOVA
+Los procedimientos t de dos muestras permiten comparar las medias de dos poblaciones o las respuestas medias a dos tratamientos de un experimento. Sin embargo, en ocasiones necesitamos comparar más de 2 grupos. El modelo del Análisis de la Varianza (ANOVA), nos permite abordar este tipo de situaciones. La función en RStudio para realizar esto es aov()
+
+```{r}
+insectos <- c(16,11,20,21,14,7,37,32,15,25,39,41,21,12,14,17,13,17,45,59,48,46,38,47)
+colores <- as.factor(c(rep(c("azul", "verde", "blanco", "amarillo"), each =6)))
+boxplot(insectos ~ colores, col = c("yellow", "blue", "white","green"), ylab = "Número de insectos atrapados")
+fm = aov( lm(insectos ~ colores) )
+summary(fm)
+```
+
+
+## Chi-Cuadrado
+
+El test estadistico de chi-cuadrado pude encontrarse en la literatura tambien como bondad de ajuste. El test de bondad de ajuste (goodness of fit tests), se le denomina asi, cuando los objetos pertenecen a una matriz de datos.
+
+La formula estadistica está dada por:
+
+
+#![CHi](images/chi.png)
+
+Para el ejemplo, se tienen 15 hombres y 19 mujeres en un salón de clase
+```{r}
+frec<-c(15,19)
+chisq.test(frec)
+```
+Los valores esperados son calculados por:
+
+```{r}
+frec<-c(15,19)
+chisq.test(frec)$expected
+```
+
+El test estadístico de chi-cuadrado pude encontrarse en la literatura tambien como bondad de ajuste, según rpubs.com El test de bondad de ajuste (goodness of fit tests), se le denomina asi, cuando los objetos pertenecen a una matriz de datos.
+
+```{r}
+matrix<-matrix(c(4,11,10,13,3,4,6,8),nrow=2)
+matrix
+chisq.test(matrix)
+```
+
+Se observa un “Warning”, esto es debido a que posiblemente los valores esperados sean menores a cinco, o la proporción supera al 20% de las celdas, con valores observados inferiores a cinco.
+
+
+
+### Test de independencia -Fishers Test
+
+Fishers Test es una prueba de significación estadistica, utilizadas en el analisis de tablas de contingencia cuando los tamaños de las muestras son pequeños (y frecuencias esperadas menores a 5).
+
+
+```{r}
+matrix<-matrix(c(4,11,10,13,3,4,6,8),nrow=2)
+matrix
+fisher.test(matrix)
 ```
