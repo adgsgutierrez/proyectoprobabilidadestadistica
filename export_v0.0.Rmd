@@ -19,12 +19,51 @@ En esta sección encontrarás todos los conceptos necesarios para iniciar a trab
 
 ### Definición 
 
-### Tablas
+## Tablas
 
 ### Tablas de frecuencia 
+Los datos cuantitativos discretos se organizan en tablas, llamadas Tablas de Distribución de
+frecuencias. La primera columna de la tabla contiene los distintos valores que asume la variable
+ordenados de menor a mayor y las restantes columnas contienen los siguientes tipos de frecuencias.
+  • Frecuencia absoluta: Indica el número de veces que se repite un valor de la variable.
+  • Frecuencia relativa: Indica la proporción con que se repite un valor. Se obtiene dividiendo la
+  frecuencia absoluta entre el tamaño de la muestra. Para una mejor interpretación es más conveniente
+  mutiplicarla por 100 para trabajar con una Frecuencia relativa porcentual.
+  • Frecuencia absoluta acumulada: Indica el número de valores que son menores o iguales que el
+  valor dado.
+  • Frecuencia relativa porcentual acumulada: Indica el porcentaje de datos que son menores o
+  iguales que el valor dado.
 
+```{r}
+library(prob)
+table=matrix(c(21,18,19,20,21,20),ncol=3,byrow=TRUE)
+ rownames(table)=c('Dato 1','Dato 2')
+ colnames(table)=c("Edad","Creditos","GPA")
+mytable<-table
+mytable
+(mytable)/margin.table(mytable)
+cumsum(mytable)
+cumsum(mytable)/margin.table(mytable)
+
+
+```
 ### Tablas dinámicas
+Una herramienta práctica para realizar conteos o tablas de contingencia son las tablas dinámicas. Algunos programas de hojas de calculo permiten realizar tablas dinámicas de forma interactivas
+```{r}
+ genes = paste('MMP', sprintf("%04d",1:10), sep="")
+ data = expand.grid(gene=genes, condition=c('copper', 'cheetos', 'beer', 'pizza'))
+ data$value = rnorm(40)
+install.packages("devtools")
+library(devtools)
+install_github("ramnathv/htmlwidgets")
+install_github("smartinsightsfromdata/rpivotTable")
+## Load rpivotTable
+library(rpivotTable)
 
+
+rpivotTable(data, rows="gene", col="condition", aggregatorName="Average", vals="value")
+
+```
 ### Gráfico de pie
 
 ### Gráfico de barras
@@ -45,3 +84,18 @@ library(prob)
 ### Gráfico pareto
 
 ### Gráfico de Box Plot
+Un diagrama de cajas y bigotes es una manera conveniente de mostrar visualmente grupos de datos
+numéricos a través de sus cuartiles.
+Estos son las observaciones que uno puede hacer al ver un diagrama de cajas y bigotes (box plot):
+  • Cuáles son los valores clave, tales como: el promedio, el percentil 25 medio, etc.
+  • Si hay valores atípicos y cuáles son sus valores.
+  • Si los datos son simétricos.
+  • Cuán estrechamente se agrupan los datos.
+  • Si los datos están sesgados y si es así, en qué dirección
+```{r}
+Hijos <-c(0,1,2,4,0,0,1,3,1,2,1,1,2,3,0,1,1,2,3,1,1,1)
+boxplot(Hijos,main="Hijos Empresa",col="green",ylabel="Hijos",boder="orange")
+```
+
+
+
